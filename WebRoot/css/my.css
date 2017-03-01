@@ -1,0 +1,612 @@
+.icon-f {
+	line-height: 32px;
+}
+
+.footer-text {
+	font-size: 14px !important;
+}
+
+.yo-tab>.item-y-ico .my-icon {
+	display: block;
+	font-size: 0.2rem;
+	font-style: normal;
+	vertical-align: middle;
+}
+
+.yo-tab-module {
+	border-radius: 0.05rem;
+	font-size: 0.12rem;
+	margin: auto;
+	background-color: #fff;
+	height: auto;
+}
+
+.yo-tab-module>.item.item-on {
+	background-color: #1ba9ba;
+	color: #fff;
+}
+
+.yo-tab-module>.item-y-ico .my-icon {
+	font-size: 0.4rem;
+	color: #0a8; /*#1ba9ba;#ff801a*/
+}
+
+.yo-tab .yo-badge {
+	position: absolute;
+	top: 0.1rem;
+	left: 55%;
+}
+
+.yo-tab-module>.item:not (:last-child )::after {
+	border-right: 1px solid;
+}
+
+.radius-item {
+	border-radius: 50%;
+	margin: 0 auto;
+	width: 0.5rem;
+	height: 0.5rem;
+	display: block;
+}
+
+.radius-item .radius-icon {
+	line-height: 0.51rem;
+	display: block;
+	font-size: 0.3rem;
+	font-style: normal;
+	vertical-align: middle;
+	color: #fff;
+}
+
+.m-userinfo {
+	text-align: center;
+	padding: 0.1rem 0;
+}
+
+.m-userinfo .radius-item {
+	width: 1rem;
+	height: 1rem;
+}
+
+.m-userinfo .radius-icon {
+	font-size: 0.7rem;
+	line-height: 1rem;
+}
+
+.m-userinfo .info {
+	padding-top: 0.1rem;
+}
+
+.m-list .my-icon {
+	display: block;
+	font-style: normal;
+	vertical-align: middle;
+	margin-right: 0.16rem;
+	margin-left: 0.1rem;
+	width: 0.16rem;
+}
+/*--------自定义文本颜色--------*/
+.text-main, a.text-main:link, a.text-main:visited, .button.border-main,
+	blockquote.border-main strong, .pager.border-main a, .pager-prev.border-main,
+	.pager-next.border-main, .nav a:hover, .nav-menu.nav-pills .active ul a:hover,
+	.bg-inverse .nav-menu ul a:hover, .bg-inverse .nav.nav-menu.nav-tabs ul a:hover,
+	.bg-inverse .nav.nav-menu.nav-tabs .active ul a:hover, .bg-inverse .nav.nav-menu.nav-pills ul a:hover,
+	.bg-inverse .nav.nav-menu.nav-pills .active ul a:hover {
+	color: #1ba9ba;
+} /*文本-主色*/
+.text-sub, a.text-sub:link, a.text-sub:visited, .button.border-sub,
+	blockquote.border-sub strong, .pager.border-sub a, .pager-prev.border-sub,
+	.pager-next.border-sub {
+	color: #0ae;
+} /*文本-辅色*/
+.text-back, a.text-back:link, a.text-back:visited, .button.border-back,
+	blockquote.border-back, .pager.border-back a, .pager-prev.border-back,
+	.pager-next.border-back {
+	color: #efe;
+} /*文本-背景色*/
+.text-mix, a.text-mix:link, a.text-mix:visited, .button.border-mix,
+	blockquote.border-mix, .pager.border-mix a, .pager-prev.border-mix,
+	.pager-next.border-mix {
+	color: #aed;
+} /*文本-融合色*/
+.text-dot, a.text-dot:link, a.text-dot:visited, .button.border-dot,
+	blockquote.border-dot strong, .pager.border-dot a, .pager-prev.border-dot,
+	.pager-next.border-dot {
+	color: #e33;
+} /*文本-点缀色*/
+/*不变文本*/
+.text-black, a.text-black:link, a.text-black:visited, .button.border-black,
+	blockquote.border-black strong, .pager.border-black a, .pager-prev.border-black,
+	.pager-next.border-black {
+	color: #000;
+}
+
+a.text-black:hover {
+	color: #666;
+}
+
+.text-gray, a.text-gray:link, a.text-gray:visited, .button.border-gray,
+	blockquote.border-gray strong, .pager.border-gray a, .pager-prev.border-gray,
+	.pager-next.border-gray {
+	color: #999;
+}
+
+.text-white, a.text-white:link, a.text-white:visited, .button.border-white,
+	blockquote.border-white, .pager.border-white a, .pager-prev.border-white,
+	.pager-next.border-white {
+	color: #fff;
+}
+
+.text-red, a.text-red:link, a.text-red:visited, .button.border-red,
+	.button.bg-red-light, blockquote.border-red strong, .pager.border-red a,
+	.pager-prev.border-red, .pager-next.border-red, .badge.bg-red-light,
+	.alert-red, .check-error {
+	color: #e33;
+}
+
+.text-yellow, a.text-yellow:link, a.text-yellow:visited, .button.border-yellow,
+	.button.bg-yellow-light, blockquote.border-yellow strong, .pager.border-yellow a,
+	.pager-prev.border-yellow, .pager-next.border-yellow, .badge.bg-yellow-light,
+	.alert-yellow, .check-warning {
+	color: #f60;
+}
+
+.text-blue, a.text-blue:link, a.text-blue:visited, .button.border-blue,
+	.button.bg-blue-light, blockquote.border-blue strong, .pager.border-blue a,
+	.pager-prev.border-blue, .pager-next.border-blue, .badge.bg-blue-light,
+	.alert-blue {
+	color: #0ae;
+}
+
+.text-green, a.text-green:link, a.text-green:visited, .button.border-green,
+	.button.bg-green-light, blockquote.border-green strong, .pager.border-green a,
+	.pager-prev.border-green, .pager-next.border-green, .badge.bg-green-light,
+	.alert-green, .check-success {
+	color: #2c7;
+}
+
+.text-red-light, a.text-red-light:link, a.text-red-light:visited,
+	.button.border-red-light, blockquote.border-red-light strong, .pager.border-red-light a
+	{
+	color: #fdc;
+}
+
+.text-yellow-light, a.text-yellow-light:link, a.text-yellow-light:visited,
+	.button.border-yellow-light, blockquote.border-yellow-light strong,
+	.pager.border-yellow-light a, .pager-prev.border-yellow-light,
+	.pager-next.border-yellow-light {
+	color: #fec;
+}
+
+.text-blue-light, a.text-blue-light:link, a.text-blue-light:visited,
+	.button.border-blue-light, blockquote.border-blue-light strong, .pager.border-blue-light a,
+	.pager-prev.border-blue-light, .pager-next.border-blue-light {
+	color: #def;
+}
+
+.text-green-light, a.text-green-light:link, a.text-green-light:visited,
+	.button.border-green-light, blockquote.border-green-light strong,
+	.pager.border-green-light a, .pager-prev.border-green-light,
+	.pager-next.border-green-light {
+	color: #ded;
+}
+/*---------------------------*/
+.bg, .table .current, .table .current td, .table .current th, .button.active,
+	.pointer.border .active, .nav-menu ul a:hover, .nav-menu.nav-pills .active ul a:hover,
+	.bg-inverse .nav.nav-menu ul a:hover, .bg-inverse .nav.nav-menu .active ul a:hover,
+	.bg-inverse .nav.nav-menu.nav-tabs ul a:hover, .bg-inverse .nav.nav-menu.nav-pills ul a:hover,
+	.bg-inverse .nav-menu.nav-inline.nav-big ul a:hover, .navbar-body .nav ul a:hover
+	{
+	background-color: #f5f5f5 !important;
+}
+
+.bg-black, .border-black .button.active, .pointer.border-black .active,
+	.nav-pills.border-black .active a, .nav-main.border-black .nav-head,
+	.pagination.border-black .active {
+	background-color: #000 !important;
+}
+
+.bg-gray, .border-gray .button.active, .pointer.border-gray .active,
+	.nav-pills.border-gray .active a, .nav-main.border-gray .nav-head,
+	.pagination.border-gray .active {
+	background-color: #999 !important;
+}
+
+.bg-white, .button.bg, .border-white .button.active, .pointer.border-white .active,
+	.nav-pills.border-white .active a, .nav-main.border-white .nav-head,
+	.pagination.border-white .active {
+	background-color: #fff !important;
+}
+
+.bg-red, .border-red .button.active, .pointer.border-red .active,
+	.nav-pills.border-red .active a, .nav-main.border-red .nav-head,
+	.pagination.border-red .active {
+	background-color: #e33 !important;
+}
+
+.bg-yellow, .border-yellow .button.active, .pointer.border-yellow .active,
+	.nav-pills.border-yellow .active a, .nav-main.border-yellow .nav-head,
+	.pagination.border-yellow .active {
+	background-color: #f60 !important;
+}
+
+.bg-blue, .border-blue .button.active, .pointer.border-blue .active,
+	.nav-pills.border-blue .active a, .nav-main.border-blue .nav-head,
+	.pagination.border-blue .active {
+	background-color: #0ae !important;
+}
+
+.bg-green, .border-green .button.active, .pointer.border-green .active,
+	.nav-pills.border-green .active a, .pagination.border-green .active {
+	background-color: #2c7 !important;
+}
+
+.bg-red-light, .table .red, .table .red td, .table .red th, .alert-red,
+	.border-red-light .button.active, .pointer.border-red-light .active,
+	.nav-pills.border-red-light .active a, .nav-main.border-red-light .nav-head,
+	.pagination.border-red-light .active {
+	background-color: #fee !important;
+}
+
+.bg-yellow-light, .table .yellow, .table .yellow td, .table .yellow th,
+	.alert-yellow, .border-yellow-light .button.active, .pointer.border-yellow-light .active,
+	.nav-pills.border-yellow-light .active a, .nav-main.border-yellow-light .nav-head,
+	.pagination.border-yellow-light .active {
+	background-color: #ffd !important;
+}
+
+.bg-blue-light, .table .blue, .table .blue td, .table .blue th,
+	.alert-blue, .border-blue-light .button.active, .pointer.border-blue-light .active,
+	.nav-pills.border-blue-light .active a, .nav-main.border-blue-light .nav-head,
+	.pagination.border-blue-light .active {
+	background-color: #eff !important;
+}
+
+.bg-green-light, .table .green, .table .green td, .table .green th,
+	.alert-green, .border-green-light .button.active, .pointer.border-green-light .active,
+	.nav-pills.border-green-light .active a, .nav-main.border-green-light .nav-head,
+	.pagination.border-green-light .active {
+	background-color: #efd !important;
+}
+
+.border-dashed {
+	border-style: dashed;
+}
+
+.border-dotted {
+	border-style: dotted;
+}
+
+.border-double {
+	border-style: double;
+}
+
+.border-inset {
+	border-style: inset;
+}
+
+.border-outset {
+	border-style: outset;
+}
+
+.border-black, .border-black .button, .border-black .tab-nav li a,
+	.border-black .tab-body, .button.bg-black, .selected.border-black,
+	.pointer.border-black li, .nav.border-black .active a, .nav.nav-tabs.border-black,
+	.nav-main.border-black a, .nav-main.border-black .nav-head, .pagination.border-black li,
+	.pager.border-black a {
+	border-color: #000;
+}
+
+.border-gray, .border-gray .button, .border-gray .tab-nav li a,
+	.border-gray .tab-body, .button.bg-gray, .selected.border-gray,
+	.pointer.border-gray li, .nav.border-gray .active a, .nav.nav-tabs.border-gray,
+	.nav-main.border-gray a, .nav-main.border-gray .nav-head, .pagination.border-gray li,
+	.pager.border-gray a {
+	border-color: #999;
+}
+
+.border-white, .border-white .button, .border-white .tab-nav li a,
+	.border-white .tab-body, .button.bg-white, .selected.border-white,
+	.pointer.border-white li, .nav.border-white .active a, .nav.nav-tabs.border-white,
+	.nav-main.border-white a, .nav-main.border-white .nav-head, .pagination.border-white li,
+	.pager.border-white a {
+	border-color: #fff;
+}
+
+.border-red, .border-red .button, .border-red .tab-nav li a, .border-red .tab-body,
+	.button.bg-red, .selected.border-red, .pointer.border-red li,
+	.check-error .input, .nav.border-red .active a, .nav.nav-tabs.border-red,
+	.nav-main.border-red a, .nav-main.border-red .nav-head, .pagination.border-red li,
+	.pager.border-red a {
+	border-color: #e33;
+}
+
+.border-yellow, .border-yellow .button, .border-yellow .tab-nav li a,
+	.border-yellow .tab-body, .button.bg-yellow, .selected.border-yellow,
+	.pointer.border-yellow li, .check-warning .input, .nav.border-yellow .active a,
+	.nav.nav-tabs.border-yellow, .nav-main.border-yellow a, .nav-main.border-yellow .nav-head,
+	.pagination.border-yellow li, .pager.border-yellow a {
+	border-color: #f60;
+}
+
+.border-blue, .border-blue .button, .border-blue .tab-nav li a,
+	.border-blue .tab-body, .button.bg-blue, .selected.border-blue,
+	.pointer.border-blue li, .nav.border-blue .active a, .nav.nav-tabs.border-blue,
+	.nav-main.border-blue a, .nav-main.border-blue .nav-head, .pagination.border-blue li,
+	.pager.border-blue a {
+	border-color: #0ae;
+}
+
+.border-green, .border-green .button, .border-green .tab-nav li a,
+	.border-green .tab-body, .button.bg-green, .selected.border-green,
+	.pointer.border-green li, .check-success .input, .nav.border-green .active a,
+	.nav.nav-tabs.border-green, .nav-main.border-green a, .nav-main.border-green .nav-head,
+	.pagination.border-green li, .pager.border-green a {
+	border-color: #2c7;
+}
+
+.border-red-light, .border-red-light .button, .border-red-light .tab-nav li a,
+	.border-red-light .tab-body, .button.bg-red-light, .selected.border-red-light,
+	.alert-red, .pointer.border-red-light li, .nav.border-red-light .active a,
+	.nav.nav-tabs.border-red-light, .nav-main.border-red-light a, .nav-main.border-red-light .nav-head,
+	.pagination.border-red-light li, .pager.border-red-light a {
+	border-color: #fee;
+}
+
+.border-yellow-light, .border-yellow-light .button, .border-yellow-light .tab-nav li a,
+	.border-yellow-light .tab-body, .button.bg-yellow-light, .selected.border-yellow-light,
+	.alert-yellow, .pointer.border-yellow-light li, .nav.border-yellow-light .active a,
+	.nav.nav-tabs.border-yellow-light, .nav-main.border-yellow-light a,
+	.nav-main.border-yellow-light .nav-head, .pagination.border-yellow-light li,
+	.pager.border-yellow-light a {
+	border-color: #ffd;
+}
+
+.border-blue-light, .border-blue-light .button, .border-blue-light .tab-nav li a,
+	.border-blue-light .tab-body, .button.bg-blue-light, .selected.border-blue-light,
+	.alert-blue, .pointer.border-blue-light li, .nav.border-blue-light .active a,
+	.nav.nav-tabs.border-blue-light, .nav-main.border-blue-light a,
+	.nav-main.border-blue-light .nav-head, .pagination.border-blue-light li,
+	.pager.border-blue-light a {
+	border-color: #eff;
+}
+
+.border-green-light, .border-green-light .button, .border-green-light .tab-nav li a,
+	.border-green-light .tab-body, .button.bg-green-light, .selected.border-green-light,
+	.alert-green, .pointer.border-green-light li, .nav.border-green-light .active a,
+	.nav.nav-tabs.border-green-light, .nav-main.border-green-light a,
+	.nav-main.border-green-light .nav-head, .pagination.border-green-light li,
+	.pager.border-green-light a {
+	border-color: #efd;
+}
+
+.button:hover, .button:focus, .button.bg:hover, .button.bg:focus {
+	background-color: #f5f5f5;
+}
+
+.button.border-black:hover, .button.border-black:focus, .button.bg-black:hover,
+	.button.bg-black:focus {
+	background-color: #666;
+	border-color: #666;
+	color: #fff;
+}
+
+.button.border-gray:hover, .button.border-gray:focus, .button.bg-gray:hover,
+	.button.bg-gray:focus {
+	background-color: #aaa;
+	border-color: #aaa;
+	color: #fff;
+}
+
+.button.border-white:hover, .button.border-white:focus, .button.bg-white:hover,
+	.button.bg-white:focus {
+	background-color: #f5f5f5;
+	border-color: #f5f5f5;
+	color: #333;
+}
+
+.button.border-red:hover, .button.border-red:focus, .button.bg-red:hover,
+	.button.bg-red:focus {
+	background-color: #f00;
+	border-color: #f00;
+	color: #fff;
+}
+
+.button.border-yellow:hover, .button.border-yellow:focus, .button.bg-yellow:hover,
+	.button.bg-yellow:focus {
+	background-color: #f90;
+	border-color: #f90;
+	color: #fff;
+}
+
+.button.border-blue:hover, .button.border-blue:focus, .button.bg-blue:hover,
+	.button.bg-blue:focus {
+	background-color: #3bd;
+	border-color: #3bd;
+	color: #fff;
+}
+
+.button.border-green:hover, .button.border-green:focus, .button.bg-green:hover,
+	.button.bg-green:focus {
+	background-color: #5d8;
+	border-color: #5d8;
+	color: #fff;
+}
+
+.button.border-red-light:hover, .button.border-red-light:focus, .button.bg-red-light:hover,
+	.button.bg-red-light:focus, .alert-red:hover {
+	background-color: #fdc;
+	border-color: #fdc;
+	color: #e33;
+}
+
+.button.border-yellow-light:hover, .button.border-yellow-light:focus,
+	.button.bg-yellow-light:hover, .button.bg-yellow-light:focus,
+	.alert-yellow:hover {
+	background-color: #fec;
+	border-color: #fec;
+	color: #f60;
+}
+
+.button.border-blue-light:hover, .button.border-blue-light:focus,
+	.button.bg-blue-light:hover, .button.bg-blue-light:focus, .alert-blue:hover
+	{
+	background-color: #def;
+	border-color: #def;
+	color: #0ae;
+}
+
+.button.border-green-light:hover, .button.border-green-light:focus,
+	.button.bg-green-light:hover, .button.bg-green-light:focus,
+	.alert-green:hover {
+	background-color: #cfa;
+	border-color: #cfa;
+	color: #2c7;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:focus, a:hover {
+	color: #1ba9ba;
+}
+
+.text-main, a.text-main:link, a.text-main:visited, .button.border-main,
+	blockquote.border-main strong, .pager.border-main a, .pager-prev.border-main,
+	.pager-next.border-main, .nav a:hover, .nav-menu.nav-pills .active ul a:hover,
+	.bg-inverse .nav-menu ul a:hover, .bg-inverse .nav.nav-menu.nav-tabs ul a:hover,
+	.bg-inverse .nav.nav-menu.nav-tabs .active ul a:hover, .bg-inverse .nav.nav-menu.nav-pills ul a:hover,
+	.bg-inverse .nav.nav-menu.nav-pills .active ul a:hover {
+	color: #1ba9ba !important;
+}
+
+.text-sub, a.text-sub:link, a.text-sub:visited, .button.border-sub,
+	blockquote.border-sub strong, .pager.border-sub a, .pager-prev.border-sub,
+	.pager-next.border-sub {
+	color: #0ae;
+}
+
+.text-back, a.text-back:link, a.text-back:visited, .button.border-back,
+	blockquote.border-back, .pager.border-back a, .pager-prev.border-back,
+	.pager-next.border-back {
+	color: #efe;
+}
+
+.text-mix, a.text-mix:link, a.text-mix:visited, .button.border-mix,
+	blockquote.border-mix, .pager.border-mix a, .pager-prev.border-mix,
+	.pager-next.border-mix {
+	color: #aed;
+}
+
+.text-dot, a.text-dot:link, a.text-dot:visited, .button.border-dot,
+	blockquote.border-dot strong, .pager.border-dot a, .pager-prev.border-dot,
+	.pager-next.border-dot {
+	color: #e33;
+}
+
+.bg-main, .border-main .button.active, .pointer.border-main .active,
+	.nav-pills.border-main .active a, .nav-main.border-main .nav-head,
+	.pagination.border-main .active {
+	background-color: #1ba9ba !important; /*#0a8*/
+}
+
+.bg-sub, .border-sub .button.active, .pointer.border-sub .active,
+	.nav-pills.border-sub .active a, .nav-main.border-sub .nav-head,
+	.pagination.border-sub .active {
+	background-color: #0ae !important;
+}
+
+.bg-back, .border-back .button.active, .pointer.border-back .active,
+	.nav-pills.border-back .active a, .nav-main.border-back .nav-head,
+	.pagination.border-back .active {
+	background-color: #efe !important;
+}
+
+.bg-mix, .border-mix .button.active, .pointer.border-mix .active,
+	.nav-pills.border-mix .active a, .pagination.border-mix .active {
+	background-color: #aed !important;
+}
+
+.bg-dot, .border-dot .button.active, .pointer.border-dot .active,
+	.nav-pills.border-dot .active a, .nav-main.border-dot .nav-head,
+	.pagination.border-dot .active {
+	background-color: #e33 !important;
+}
+
+.border-main, .border-main .button, .border-main .tab-nav li a,
+	.border-main .tab-body, .button.bg-main, .selected.border-main,
+	.pointer.border-main li, .nav.border-main .active a, .nav.nav-tabs.border-main,
+	.nav-main.border-main a, .nav-main.border-main .nav-head, .pagination.border-main li,
+	.pager.border-main a {
+	border-color: #1ba9ba !important;
+}
+
+.border-sub, .border-sub .button, .border-sub .tab-nav li a, .border-sub .tab-body,
+	.button.bg-sub, .selected.border-sub, .pointer.border-sub li, .nav.border-sub .active a,
+	.nav.nav-tabs.border-sub, .nav-main.border-sub a, .nav-main.border-sub .nav-head,
+	.pagination.border-sub li, .pager.border-sub a {
+	border-color: #0ae !important;
+}
+
+.border-back, .border-back .button, .border-back .tab-nav li a,
+	.border-back .tab-body, .button.bg-back, .selected.border-back,
+	.pointer.border-back li, .nav.border-back .active a, .nav.nav-tabs.border-back,
+	.nav-main.border-back a, .nav-main.border-back .nav-head, .pagination.border-back li,
+	.pager.border-back a {
+	border-color: #efe !important;
+}
+
+.border-mix, .border-mix .button, .border-mix .tab-nav li a, .border-mix .tab-body,
+	.button.bg-mix, .selected.border-mix, .pointer.border-mix li, .nav.border-mix .active a,
+	.nav.nav-tabs.border-mix, .nav-main.border-mix a, .nav-main.border-mix .nav-head,
+	.pagination.border-mix li, .pager.border-mix a {
+	border-color: #aed !important;
+}
+
+.border-dot, .border-dot .button, .border-dot .tab-nav li a, .border-dot .tab-body,
+	.button.bg-dot, .selected.border-dot, .pointer.border-dot li, .nav.border-dot .active a,
+	.nav.nav-tabs.border-dot, .nav-main.border-dot a, .nav-main.border-dot .nav-head,
+	.pagination.border-dot li, .pager.border-dot a {
+	border-color: #e33 !important;
+}
+
+.button.border-main:hover, .button.border-main:focus, .button.bg-main:hover,
+	.button.bg-main:focus {
+	background-color: #0ab;
+	border-color: #0ab;
+	color: #fff;
+}
+
+.button.border-sub:hover, .button.border-sub:focus, .button.bg-sub:hover,
+	.button.bg-sub:focus {
+	background-color: #09f;
+	border-color: #09f;
+	color: #fff;
+}
+
+.button.border-back:hover, .button.border-back:focus, .button.bg-back:hover,
+	.button.bg-back:focus {
+	background-color: #cec;
+	border-color: #cec;
+	color: #333;
+}
+
+.button.border-mix:hover, .button.border-mix:focus, .button.bg-mix:hover,
+	.button.bg-mix:focus {
+	background-color: #cec;
+	border-color: #cec;
+	color: #333;
+}
+
+.button.border-dot:hover, .button.border-dot:focus, .button.bg-dot:hover,
+	.button.bg-dot:focus {
+	background-color: #f00;
+	border-color: #f00;
+	color: #fff;
+}
+
+.radius-circle {
+	border-radius: 50%;
+}

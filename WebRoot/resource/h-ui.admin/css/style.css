@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* 你自己的样式 */
+.dataTables_wrapper .dataTables_length {
+	float: none;
+	padding-bottom: 0px;
+	padding-top: 10px;
+	text-align: center;
+}

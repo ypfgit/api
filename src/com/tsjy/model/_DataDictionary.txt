@@ -1,0 +1,409 @@
+Table: ts_action
+---------+--------------+------+-----+---------+---------
+ Field   | Type         | Null | Key | Default | Remarks 
+---------+--------------+------+-----+---------+---------
+ id      | MEDIUMINT(7) | NO   | PRI |         |         
+ name    | VARCHAR(100) | YES  |     |         |         
+ en_name | VARCHAR(100) | YES  |     |         |         
+ handler | VARCHAR(100) | YES  |     |         |         
+ icon    | VARCHAR(100) | YES  |     |         |         
+ sort_no | SMALLINT(5)  | YES  |     |         |         
+ remark  | VARCHAR(100) | YES  |     |         |         
+---------+--------------+------+-----+---------+---------
+
+Table: ts_contract
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ id         | INT(10)      | NO   | PRI |         |         
+ shop_id    | INT(10)      | NO   |     |         | 商户编号    
+ begin_date | DATETIME(19) | NO   |     |         | 合同开始时间  
+ content    | VARCHAR(500) | NO   |     |         | 合同内容    
+ file_id    | INT(10)      | YES  |     |         | 文件编号    
+ remark     | VARCHAR(100) | YES  |     |         | 备注      
+------------+--------------+------+-----+---------+---------
+
+Table: ts_dept
+-----------+--------------+------+-----+---------+---------
+ Field     | Type         | Null | Key | Default | Remarks 
+-----------+--------------+------+-----+---------+---------
+ id        | VARCHAR(100) | NO   | PRI |         |         
+ name      | VARCHAR(50)  | YES  |     |         | 部门名称    
+ parent_id | VARCHAR(100) | YES  |     |         | 父结点     
+ custom_id | VARCHAR(20)  | YES  |     |         |  业务代码   
+ sort_no   | SMALLINT(5)  | YES  |     |         | 排序号     
+ leaf      | VARCHAR(2)   | YES  |     |         | 叶子节点(0:树枝节点;1:叶子节点)
+ remark    | VARCHAR(100) | YES  |     |         |         
+ enabled   | VARCHAR(1)   | YES  |     |         | 1启用2禁用  
+-----------+--------------+------+-----+---------+---------
+
+Table: ts_dict
+-----------+--------------+------+-----+---------+---------
+ Field     | Type         | Null | Key | Default | Remarks 
+-----------+--------------+------+-----+---------+---------
+ field     | VARCHAR(15)  | YES  |     |         |         
+ name      | VARCHAR(20)  | YES  |     |         |         
+ value     | VARCHAR(10)  | YES  |     |         |         
+ enabled   | VARCHAR(2)   | YES  |     |         |         
+ edit_mode | VARCHAR(2)   | YES  |     |         |         
+ sort_no   | INT(10)      | YES  |     |         |         
+ remark    | VARCHAR(200) | YES  |     |         |         
+ id        | INT(10)      | NO   | PRI | 0       |         
+-----------+--------------+------+-----+---------+---------
+
+Table: ts_file
+-------------+--------------+------+-----+---------+---------
+ Field       | Type         | Null | Key | Default | Remarks 
+-------------+--------------+------+-----+---------+---------
+ id          | INT(10)      | NO   | PRI |         |         
+ shop_id     | INT(10)      | YES  |     |         | 商户id    
+ reporter    | INT(10)      | YES  |     |         | 上报人     
+ uploader    | INT(10)      | YES  |     |         | 上传人     
+ upload_date | DATETIME(19) | YES  |     |         | 上传时间    
+ file_name   | VARCHAR(100) | YES  |     |         | 文件名     
+ file_path   | VARCHAR(200) | YES  |     |         | 文件路径    
+ remark      | VARCHAR(200) | YES  |     |         |         
+ file_type   | VARCHAR(2)   | YES  |     | 0       | 文件类型    
+-------------+--------------+------+-----+---------+---------
+
+Table: ts_file_mobile
+-------------+--------------+------+-----+---------+---------
+ Field       | Type         | Null | Key | Default | Remarks 
+-------------+--------------+------+-----+---------+---------
+ id          | INT(10)      | NO   | PRI |         |         
+ file_id     | INT(10)      | YES  |     |         | 号码文件id  
+ serv_number | VARCHAR(11)  | YES  |     |         | 号码      
+ serv_price  | DECIMAL(8,2) | YES  |     |         | 号码底价    
+ card_price  | DECIMAL(8,2) | YES  |     |         | 卡费      
+ offer_id    | SMALLINT(5)  | YES  |     |         | 套餐id    
+ remark      | VARCHAR(200) | YES  |     |         |         
+-------------+--------------+------+-----+---------+---------
+
+Table: ts_file_operate
+---------------+--------------+------+-----+---------+---------
+ Field         | Type         | Null | Key | Default | Remarks 
+---------------+--------------+------+-----+---------+---------
+ id            | INT(10)      | NO   | PRI |         |         
+ file_id       | INT(10)      | YES  |     |         | 文件id    
+ operater      | INT(10)      | YES  |     |         | 处理人id   
+ operate_type  | VARCHAR(2)   | YES  |     | 0       | 处理方式：0 新增 1 全覆盖 2 修改 
+ operate_date  | DATETIME(19) | YES  |     |         | 处理时间    
+ remark        | VARCHAR(200) | YES  |     |         | 备注      
+ price_type    | VARCHAR(2)   | YES  |     |         | 0 批量加价 1 百分比加价
+ operate_value | DECIMAL(6,2) | YES  |     |         | 金额或者百分比 
+---------------+--------------+------+-----+---------+---------
+
+Table: ts_icon
+-----------+-------------+------+-----+---------+---------
+ Field     | Type        | Null | Key | Default | Remarks 
+-----------+-------------+------+-----+---------+---------
+ id        | VARCHAR(8)  | NO   | PRI |         |         
+ file_name | VARCHAR(50) | YES  |     |         |         
+ css_name  | VARCHAR(50) | YES  |     |         |         
+-----------+-------------+------+-----+---------+---------
+
+Table: ts_job
+-----------+--------------+------+-----+---------+---------
+ Field     | Type         | Null | Key | Default | Remarks 
+-----------+--------------+------+-----+---------+---------
+ id        | VARCHAR(100) | NO   | PRI |         |         
+ name      | VARCHAR(50)  | YES  |     |         |         
+ parent_id | VARCHAR(100) | YES  |     |         |         
+ custom_id | VARCHAR(20)  | YES  |     |         |         
+ sort_no   | SMALLINT(5)  | YES  |     |         |         
+ leaf      | VARCHAR(2)   | YES  |     |         |         
+ remark    | VARCHAR(100) | YES  |     |         |         
+ enabled   | VARCHAR(1)   | YES  |     |         |         
+-----------+--------------+------+-----+---------+---------
+
+Table: ts_menu
+-----------+--------------+------+-----+---------+---------
+ Field     | Type         | Null | Key | Default | Remarks 
+-----------+--------------+------+-----+---------+---------
+ id        | VARCHAR(60)  | NO   | PRI |         | 菜单编号    
+ name      | VARCHAR(50)  | YES  |     |         | 菜单名称    
+ parent_id | VARCHAR(60)  | YES  |     |         | 上级菜单编号  
+ iconcls   | VARCHAR(50)  | YES  |     |         | 节点图标css类名
+ collapsed | VARCHAR(2)   | YES  |     | 0       | 展开状态(1:展开;0:收缩)
+ request   | VARCHAR(100) | YES  |     |         | 请求地址    
+ leaf      | VARCHAR(2)   | YES  |     | 0       | 叶子节点(0:树枝节点;1:叶子节点)
+ sort_no   | SMALLINT(5)  | YES  |     |         | 排序号     
+ remark    | VARCHAR(200) | YES  |     |         | 备注      
+ icon      | VARCHAR(50)  | YES  |     |         | 节点图标    
+ type      | VARCHAR(2)   | YES  |     | 0       | 菜单类型(1:系统菜单;0:业务菜单)
+ en_name   | VARCHAR(50)  | YES  |     |         | 英文名     
+ module_id | INT(10)      | YES  |     |         | 模块编号    
+-----------+--------------+------+-----+---------+---------
+
+Table: ts_mobile_dtal
+----------------+--------------+------+-----+---------+---------
+ Field          | Type         | Null | Key | Default | Remarks 
+----------------+--------------+------+-----+---------+---------
+ id             | INT(10)      | NO   | PRI |         |         
+ file_mobile_id | INT(10)      | YES  |     |         | 文件号码id  
+ serv_number    | VARCHAR(11)  | NO   | PRI |         | 号码      
+ serv_price     | DECIMAL(8,2) | YES  |     |         | 现售号码价格  
+ card_price     | DECIMAL(8,2) | YES  |     |         | 现售卡费    
+ join_date      | DATETIME(19) | YES  |     |         | 加入时间    
+ state          | CHAR(1)      | YES  |     | 0       | 状态 0 待售 1 在售 ，2 已售 3停售
+ serv_level     | VARCHAR(2)   | YES  |     | 0       | 号码级别，级别越高排名越靠前
+ serv_type      | VARCHAR(2)   | YES  |     |         | 号码类型，3连号，炸弹号，生日号等,多个逗号隔开
+ pre3           | VARCHAR(3)   | YES  |     |         | 前3位     
+ mid4           | VARCHAR(4)   | YES  |     |         | 中4位     
+ end4           | VARCHAR(4)   | YES  |     |         | 后4位     
+ one            | CHAR(1)      | YES  |     |         |         
+ two            | CHAR(1)      | YES  |     |         |         
+ there          | CHAR(1)      | YES  |     |         |         
+ four           | CHAR(1)      | YES  |     |         |         
+ five           | CHAR(1)      | YES  |     |         |         
+ six            | CHAR(1)      | YES  |     |         |         
+ seven          | CHAR(1)      | YES  |     |         |         
+ eight          | CHAR(1)      | YES  |     |         |         
+ nine           | CHAR(1)      | YES  |     |         |         
+ ten            | CHAR(1)      | YES  |     |         |         
+ elevn          | CHAR(1)      | YES  |     |         |         
+----------------+--------------+------+-----+---------+---------
+
+Table: ts_mobile_offer
+--------+--------------+------+-----+---------+---------
+ Field  | Type         | Null | Key | Default | Remarks 
+--------+--------------+------+-----+---------+---------
+ id     | SMALLINT(5)  | NO   | PRI |         |         
+ name   | VARCHAR(100) | NO   |     |         | 套餐名     
+ fee    | DECIMAL(8,2) | NO   |     | 0.00    | 套餐费     
+ type   | CHAR(1)      | NO   |     | 0       | 类型 0 移动 1 联通 2 电信
+ city   | VARCHAR(10)  | NO   |     | 郑州      | 地区      
+ remark | VARCHAR(200) | YES  |     |         | 备注      
+--------+--------------+------+-----+---------+---------
+
+Table: ts_mobile_price_log
+----------------+--------------+------+-----+---------+---------
+ Field          | Type         | Null | Key | Default | Remarks 
+----------------+--------------+------+-----+---------+---------
+ id             | INT(10)      | NO   | PRI |         |         
+ file_id        | INT(10)      | YES  |     |         |         
+ serv_number    | VARCHAR(11)  | YES  |     |         | 号码      
+ old_num_price  | DECIMAL(8,2) | YES  |     |         | 老话费价格   
+ old_card_price | DECIMAL(8,2) | YES  |     |         | 老卡费价格   
+ new_num_price  | DECIMAL(8,2) | YES  |     |         | 新话费     
+ new_card_price | DECIMAL(8,2) | YES  |     |         | 新卡费     
+ updater        | INT(10)      | YES  |     |         | 修改人     
+ update_date    | DATETIME(19) | YES  |     |         | 修改时间    
+----------------+--------------+------+-----+---------+---------
+
+Table: ts_module
+-----------+--------------+------+-----+---------+---------
+ Field     | Type         | Null | Key | Default | Remarks 
+-----------+--------------+------+-----+---------+---------
+ id        | INT(10)      | NO   | PRI | 0       |         
+ name      | VARCHAR(50)  | YES  |     |         |         
+ en_name   | VARCHAR(50)  | YES  |     |         |         
+ home_page | VARCHAR(100) | YES  |     |         |         
+ sort_no   | SMALLINT(5)  | YES  |     |         |         
+ collapsed | VARCHAR(2)   | YES  |     |         |         
+-----------+--------------+------+-----+---------+---------
+
+Table: ts_msg
+-----------+--------------+------+-----+---------+---------
+ Field     | Type         | Null | Key | Default | Remarks 
+-----------+--------------+------+-----+---------+---------
+ id        | INT(10)      | NO   | PRI | 0       |         
+ type      | VARCHAR(1)   | YES  |     |         |         
+ content   | VARCHAR(200) | YES  |     |         |         
+ phone     | VARCHAR(11)  | YES  |     |         |         
+ send_date | DATETIME(19) | YES  |     |         |         
+ order_id  | INT(10)      | YES  |     |         |         
+ state     | VARCHAR(1)   | YES  |     |         |         
+-----------+--------------+------+-----+---------+---------
+
+Table: ts_notice
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ noticeid   | VARCHAR(8)   | NO   | PRI |         |         
+ title      | TEXT(65535)  | YES  |     |         |         
+ content    | TEXT(65535)  | YES  |     |         |         
+ createdate | DATETIME(19) | YES  |     |         |         
+ userid     | VARCHAR(8)   | YES  |     |         |         
+ enabled    | VARCHAR(2)   | YES  |     |         |         
+ noticetype | VARCHAR(2)   | YES  |     |         |         
+------------+--------------+------+-----+---------+---------
+
+Table: ts_order
+--------------+---------------+------+-----+---------+---------
+ Field        | Type          | Null | Key | Default | Remarks 
+--------------+---------------+------+-----+---------+---------
+ id           | INT(10)       | NO   | PRI |         |         
+ orderer_id   | INT(10)       | NO   |     |         | 订购人id   
+ mobile_id    | INT(10)       | NO   |     |         | 号码id    
+ order_date   | DATETIME(19)  | YES  |     |         | 订购时间    
+ state        | VARCHAR(20)   | NO   |     | 0       | 状态 0 未完结 1已完结
+ order_type   | VARCHAR(29)   | NO   |     | 0       | 订单类型：0直接购买、1客服代购、2预约购买
+ remark       | VARCHAR(300)  | YES  |     |         |         
+ send_date    | DATETIME(19)  | YES  |     |         | 送货时间    
+ send_address | VARCHAR(300)  | YES  |     |         | 收货地址    
+ serv_price   | DECIMAL(10,2) | YES  |     |         | 实际号费    
+ card_price   | MEDIUMINT(7)  | YES  |     |         | 实际卡费    
+ offer_name   | VARCHAR(100)  | YES  |     |         | 卡品      
+ offer_id     | BIGINT(19)    | YES  |     |         | 套餐      
+ step         | VARCHAR(200)  | YES  |     |         | 单子处理步骤：客服、经销商
+ pay_type     | VARCHAR(20)   | YES  |     | 1       | 1货到2支付宝 
+--------------+---------------+------+-----+---------+---------
+
+Table: ts_order_opreate
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ id         | INT(10)      | NO   | PRI | 0       |         
+ operator   | INT(10)      | NO   |     |         | 处理人id   
+ begin_date | DATETIME(19) | YES  |     |         | 处理开始时间  
+ end_date   | DATETIME(19) | YES  |     |         | 处理结束时间  
+ order_id   | INT(10)      | NO   |     |         | 订单id    
+ result     | VARCHAR(200) | NO   |     |         | 结果      
+ type       | VARCHAR(1)   | NO   |     | 0       | 类型：0客服处理、1经销商处理
+ step       | VARCHAR(1)   | NO   |     | 0       | 处理步骤：0 1 2 3 4
+------------+--------------+------+-----+---------+---------
+
+Table: ts_order_pre
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ id         | INT(10)      | NO   | PRI |         |         
+ orderer_id | INT(10)      | NO   |     |         | 订购人id   
+ mobile_id  | INT(10)      | NO   |     |         | 号码id    
+ order_date | DATETIME(19) | YES  |     |         | 订购时间    
+ remark     | VARCHAR(200) | YES  |     |         |         
+------------+--------------+------+-----+---------+---------
+
+Table: ts_orderer
+---------+--------------+------+-----+---------+---------
+ Field   | Type         | Null | Key | Default | Remarks 
+---------+--------------+------+-----+---------+---------
+ id      | INT(10)      | NO   | PRI |         |         
+ name    | VARCHAR(50)  | NO   |     |         | 订购人     
+ phone   | VARCHAR(20)  | NO   |     |         | 联系方式    
+ address | VARCHAR(200) | YES  |     |         | 地址      
+ qq      | VARCHAR(15)  | YES  |     |         |         
+ remark  | VARCHAR(200) | YES  |     |         |         
+---------+--------------+------+-----+---------+---------
+
+Table: ts_orderer_ask
+-----------+--------------+------+-----+---------+---------
+ Field     | Type         | Null | Key | Default | Remarks 
+-----------+--------------+------+-----+---------+---------
+ id        | INT(10)      | NO   | PRI |         |         
+ operator  | INT(10)      | NO   |     |         | 接待人     
+ phone     | VARCHAR(11)  | NO   |     |         | 来电号码    
+ ask_date  | DATETIME(19) | YES  |     |         | 来电时间    
+ sex       | VARCHAR(1)   | YES  |     |         | 来电人性别 0 男 1 女
+ content   | VARCHAR(200) | NO   |     |         | 咨询内容    
+ intention | VARCHAR(2)   | NO   |     |         | 来电人意向   
+ remark    | VARCHAR(200) | YES  |     |         | 备注      
+-----------+--------------+------+-----+---------+---------
+
+Table: ts_param
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ paramid    | VARCHAR(8)   | NO   | PRI |         |         
+ paramkey   | VARCHAR(50)  | YES  |     |         |         
+ paramvalue | TEXT(65535)  | YES  |     |         |         
+ remark     | VARCHAR(200) | YES  |     |         |         
+------------+--------------+------+-----+---------+---------
+
+Table: ts_role
+--------+--------------+------+-----+---------+---------
+ Field  | Type         | Null | Key | Default | Remarks 
+--------+--------------+------+-----+---------+---------
+ id     | INT(10)      | NO   | PRI |         |         
+ name   | VARCHAR(50)  | YES  |     |         |         
+ remark | VARCHAR(200) | YES  |     |         |         
+--------+--------------+------+-----+---------+---------
+
+Table: ts_role_auth
+---------+--------------+------+-----+---------+---------
+ Field   | Type         | Null | Key | Default | Remarks 
+---------+--------------+------+-----+---------+---------
+ role_id | VARCHAR(8)   | NO   | PRI |         |         
+ menu_id | VARCHAR(60)  | NO   | PRI |         |         
+ actions | VARCHAR(200) | YES  |     |         |         
+---------+--------------+------+-----+---------+---------
+
+Table: ts_shop
+----------+--------------+------+-----+---------+---------
+ Field    | Type         | Null | Key | Default | Remarks 
+----------+--------------+------+-----+---------+---------
+ id       | INT(10)      | NO   | PRI |         |         
+ name     | VARCHAR(100) | YES  |     |         | 商户名（公司、个人）
+ address  | VARCHAR(200) | YES  |     |         | 商户地址    
+ manager  | VARCHAR(20)  | YES  |     |         | 负责人     
+ phone    | VARCHAR(20)  | YES  |     |         | 联系电话    
+ level_no | VARCHAR(2)   | YES  |     | 0       | 商户等级    
+ remark   | VARCHAR(200) | YES  |     |         | 备注      
+----------+--------------+------+-----+---------+---------
+
+Table: ts_user
+------------+-------------+------+-----+---------+---------
+ Field      | Type        | Null | Key | Default | Remarks 
+------------+-------------+------+-----+---------+---------
+ id         | INT(10)     | NO   | PRI |         |         
+ password   | VARCHAR(50) | NO   |     |         | 密码      
+ name       | VARCHAR(50) | NO   |     |         | 用户姓名    
+ login_name | VARCHAR(50) | NO   |     |         | 登录账号    
+ dept_id    | VARCHAR(20) | NO   |     |         | 部门id    
+ status     | VARCHAR(1)  | YES  |     | 1       | 状态 1 正常 0停用
+ phone      | VARCHAR(11) | YES  |     |         | 手机      
+ remark     | TEXT(65535) | YES  |     |         | 备注      
+ sex        | VARCHAR(1)  | YES  |     |         | 默认0  1 男 2 女
+ job_id     | VARCHAR(20) | YES  |     |         |         
+------------+-------------+------+-----+---------+---------
+
+Table: ts_user_job
+---------+-------------+------+-----+---------+---------
+ Field   | Type        | Null | Key | Default | Remarks 
+---------+-------------+------+-----+---------+---------
+ user_id | INT(10)     | NO   | PRI |         |         
+ job_id  | VARCHAR(20) | NO   | PRI |         |         
+---------+-------------+------+-----+---------+---------
+
+Table: ts_user_role
+---------+---------+------+-----+---------+---------
+ Field   | Type    | Null | Key | Default | Remarks 
+---------+---------+------+-----+---------+---------
+ user_id | INT(10) | NO   | PRI |         |         
+ role_id | INT(10) | NO   | PRI |         |         
+---------+---------+------+-----+---------+---------
+
+Table: wx_job_media
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ id         | INT(10)      | NO   | PRI |         |         
+ openid     | VARCHAR(32)  | YES  |     |         | 接收人ID   
+ media_path | VARCHAR(100) | YES  |     |         | 媒体文件路径  
+ type       | VARCHAR(32)  | YES  |     |         | 媒体文件类型  
+ media_id   | VARCHAR(600) | YES  |     |         | 创建的媒体ID 
+ created_at | INT(10)      | YES  |     |         | 创建在时间戳  
+ is_send    | CHAR(1)      | YES  |     | 0       | 0未发送1已发送
+ platid     | VARCHAR(32)  | YES  |     |         | 平台ID    
+------------+--------------+------+-----+---------+---------
+
+Table: wx_user
+----------------+--------------+------+-----+---------+---------
+ Field          | Type         | Null | Key | Default | Remarks 
+----------------+--------------+------+-----+---------+---------
+ id             | INT(10)      | NO   | PRI |         |         
+ username       | VARCHAR(10)  | YES  |     |         |         
+ phone          | VARCHAR(11)  | YES  |     |         |         
+ openid         | VARCHAR(32)  | NO   |     |         |         
+ nickname       | VARCHAR(100) | YES  |     |         |         
+ sex            | CHAR(1)      | YES  |     | 0       | 1男2女0未知 
+ headimgurl     | VARCHAR(200) | YES  |     |         |         
+ subscribe_time | INT(10)      | YES  |     |         |         
+ city           | VARCHAR(20)  | YES  |     |         |         
+ country        | VARCHAR(20)  | YES  |     |         |         
+ province       | VARCHAR(20)  | YES  |     |         |         
+ subscribe      | CHAR(1)      | YES  |     |         | 1关注0不关注 
+ qrcode         | VARCHAR(500) | YES  |     |         |         
+----------------+--------------+------+-----+---------+---------
+

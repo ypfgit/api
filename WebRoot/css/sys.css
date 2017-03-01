@@ -1,0 +1,34 @@
+﻿
+tr.group td{
+	color:#210707;
+	font-weight: 800;
+    font-size: 16px;
+}
+
+.dataTable .row-details.row-details-open {
+    background: url("datatable-row-openclose.png") no-repeat 0 -23px !important;
+}
+
+.dataTable .row-details {
+    margin-top: 3px;
+    display: inline-block;
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+}
+
+.dataTable .row-details.row-details-close {
+    background: url("datatable-row-openclose.png") no-repeat 0 0;
+}
+
+
+.file-item .info i{
+	font-size: 20px;
+    font-weight: 900;
+}
+
+.file-item .file-del{
+	position:absolute;
+	right:4px;
+	font-size: 15px;
+}

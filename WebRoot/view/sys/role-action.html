@@ -1,0 +1,78 @@
+﻿ @var htmlPart = {
+<article class="page-container">
+	<form action="" method="post" class="form form-horizontal" id="J_form">
+		<input type="hidden" name="id" value="${role.id}">
+		<div class="row cl">
+			<label class="form-label col-xs-3 col-sm-2">角色名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="${role.name}" placeholder=""  name="name" readonly="readonly">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-3 col-sm-2">备注：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="${role.remark}" placeholder="" id="" name="remark" readonly="readonly">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-3 col-sm-2">角色权限：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				@for(menu in menus){
+				<dl class="permission-list">
+					<dt>
+						<label>
+							<input type="checkbox" value="" name="${menu.id}" id="action_${menu.id}">
+							${menu.text}</label>
+					</dt>
+					<dd>
+						<dl class="cl permission-list2">
+							<dt>
+								 @var names1 =  strutil.split (menu.names,",");
+								 @var codes1 =  strutil.split (menu.codes,",");
+								 @for(var i=0;i<names1.~size;i++){
+									 <label class="">
+									 @if(menu.actions!=null&&strutil.contain(menu.actions,codes1[i])){
+									 	<input type="checkbox" value="${codes1[i]}" name="${menu.en_name}" id="action_${menu.id}_${i}" checked="checked">
+									 	${names1[i]}</label>
+									 @}else{
+									 	<input type="checkbox" value="${codes1[i]}" name="${menu.en_name}" id="action_${menu.id}_${i}">
+									 	${names1[i]}</label>
+									 @}
+									 
+								 @}
+							</dt>
+						</dl>
+					</dd>
+				</dl>				
+				@}
+				
+			</div>
+		</div>
+	</form>
+</article>
+@};
+ 
+@var jsPart = {
+	<script type="text/javascript" src="${path}/resource/jquery.form/jquery.form.js"></script> 
+	<script>
+
+		$(document).ready(function() {
+			$(".permission-list dt input:checkbox").click(function(){
+				$(this).closest("dl").find("dd input:checkbox").prop("checked",$(this).prop("checked"));
+			});
+			
+			window.submit=function submit(){
+				$('#J_form').ajaxSubmit({
+					url:'${path}/role/saveAction',
+					type:"post",
+					success:function(){
+						layer.closeAll();
+					}
+				});
+			}
+		});
+		
+	</script>
+@};
+ 
+@include("/view/sys/_layout.html",{jsSection:jsPart,htmlSection:htmlPart}){}

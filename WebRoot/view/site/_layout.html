@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+<title>${title}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="${path}/css/pintuer.css">
+<link rel="stylesheet" href="${path}/css/style.css">
+<script src="${path}/js/jquery.js"></script>
+<script src="${path}/js/pintuer.js"></script>
+<script src="${path}/js/respond.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="layout bg-back  hidden-l">
+			<div class="container-layout height-big">
+				<span class="float-right">
+					@if(!isEmpty(session.S_USER.id)){
+						<a href="${path}/account/logout">退出</a>
+					@}else{
+						<a href="${path}/account/register">注册</a> 
+						<span class="text-little text-gray">|</span>
+						<a href="${path}/account/login">登录</a>
+					@}
+					 <span class="text-little text-gray">|</span> 
+					
+					<a href="${path}/">首页</a> 
+					
+					</span>欢迎来到${title}
+			</div>
+		</div>
+
+		<div
+			class="container-layout bg-main bg-inverse">
+			<div class="line">
+				<div class="xl12 xs4 xm4 xb3">
+					<button class="button icon-navicon float-right bg-white"
+						data-target="#header-demo4"></button>
+					<img src="${path}/${logo}"  height="98" />
+				</div>
+				<div class=" xl12 xs8 xm8 xb9 margin-big-top nav-navicon"
+					id="header-demo4">
+					<div class="xs7 xm7 xb3 xb3-move">
+						<ul class="nav nav-menu nav-inline nav-pills">
+							<li class="active"><a href="${path}/">首页</a></li>
+							<!-- <li><a href="#">更多<span class="arrow"></span></a>
+                                <ul class="drop-menu">
+                                    <li><a href="#">组件</a> </li>
+                                    <li><a href="#">模块<span class="arrow"></span></a>
+                                        <ul>
+                                            <li><a href="#">头部</a> </li>
+                                            <li><a href="#">导航</a> </li>
+                                            <li><a href="#">底部</a> </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li> -->
+						</ul>
+					</div>
+					<div class="xs4 xm4 xb3 ">
+						<form class="hidden">
+							<div class="input-group padding-little-top">
+								<input type="text" class="input" name="keywords" size="30"
+									placeholder="关键词" /> <span class="addbtn">
+									<button type="button" class="button bg">搜!</button>
+								</span>
+							</div>
+						</form>
+					</div>
+					<div class="hidden-s hidden-m xb3 xb3-move">
+						<div class="xl6 xb12 text-white">
+							<h1>${contact}</h1>
+						</div>
+						<div class="xl6 xb12 text-small text-center">
+							<a href="#" class="win-homepage">设为首页</a> | <a href="#"
+								class="win-favorite">加入收藏</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		${htmlSection}
+		
+		<div class="container-layout margin-top bg-back">
+			<div class="padding-top">
+				<div class="text-center">
+					<ul class="nav nav-inline">
+						<li class="active"><a href="#">网站首页</a></li>
+						<li><a href="#">新闻资讯</a></li>
+						<li><a href="#">产品中心</a></li>
+						<li><a href="#">技术反馈</a></li>
+						<li><a href="#">留言反馈</a></li>
+						<li><a href="#">联系方式</a></li>
+					</ul>
+				</div>
+				<div class="text-center height-big">版权所有 ©2016-2017  郑州晁振商贸有限公司  豫ICP备：<a class="text-main" href="http://www.miitbeian.gov.cn/" target="_blank">16017658号</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="doc-backtop win-backtop icon-arrow-circle-up"></div>
+</body>
+<script>
+var r_user = {id:'${session.S_USER.id!}',name:'${session.S_USER.name!}',login_name:'${session.S_USER.login_name!}',status:'${session.S_USER.status!}',rolename:'${session.S_USER.role_name!}'};
+var r_path = '${path}';
+</script>
+
+${jsSection!}
+
+
+</html>

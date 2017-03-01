@@ -1,0 +1,132 @@
+﻿ @var htmlPart = {
+<link href="${path}/resource/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+
+<nav class="breadcrumb">
+	<i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>
+	资源管理 <span class="c-gray en">&gt;</span> 菜单管理 <a
+		class="btn btn-success radius r"
+		style="line-height: 1.6em; margin-top: 3px"
+		href="javascript:location.replace(location.href);" title="刷新"><i
+		class="Hui-iconfont">&#xe68f;</i></a>
+</nav>
+
+
+<div class="page-container">
+	<div class="row">
+		<div class="col-md-2 ">
+			<td width="200" class="va-t"><ul id="J_tree" class="ztree  bg-1"></ul></td>
+		</div>
+		<div class="col-md-10">
+			<div class="cl pd-5 bg-1 bk-gray">
+				<span class="l">
+<!-- 				<a href="javascript:;" onclick="datadel()" -->
+<!-- 					class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> -->
+<!-- 						批量删除</a>  -->
+						<button id="J_add"
+					class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i>
+						添加</button></span>
+				</span>
+				<span class="r">
+					<input id="J_title" type="text" class="input-text" style="width:150px;"
+					placeholder="输入关键字" id="" name="">
+				<button id="J_query" type="button" title="模糊查询" class="btn btn-success radius" id="" name="">
+					<i class="Hui-iconfont">&#xe665;</i>
+				</button>
+<!-- 				<button type="button" title="更多搜索" class="btn btn-primary radius" id="" name=""> -->
+<!-- 					<i class="Hui-iconfont">&#xe6d5;</i> -->
+<!-- 				</button> -->
+				</span>
+			</div>
+			<div class="mt-10">
+				<table
+					class="table table-border table-bordered table-hover table-bg table-sort">
+					<thead>
+						<tr class="text-c">
+							<th width="20"><input type="checkbox" name="cb-check-all" value=""></th>
+							<th width="100">菜单编号</th>
+							<th width="100">菜单名称</th>
+							<th width="40">访问地址</th>
+							<th width="100">序号</th>
+							<th width="100">图标</th>
+							<th width="100">备注</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="page-container" id="J_layer" style="display:none;"> 
+<form  action="" method="post" class="form form-horizontal" id="J_form">
+		<input type="hidden" name="id">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>上级栏目：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="position:relative;" id="J_treeCombo">
+			</div>
+		</div>
+		
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>菜单名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" name="text">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>访问地址：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder=""  name="url">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>序号：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder=""  name="sort_no">
+			</div>
+		</div>
+		
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>图标：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input style="width:70%;" type="text" class="input-text" value="" placeholder="照片" readonly="readonly"  name="icon" id="J_criminal_photo">
+		      		 <div style="width:27%;zindex:-1;" id="picker">选择图片</div>
+				</div>
+				
+		</div>
+		
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">备注：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<textarea name="remark" cols="" rows="" class="textarea"  placeholder="备注最少输入500个字符" onKeyUp="textarealength(this,500)"></textarea>
+				<p class="textarea-numberbar"><em class="textarea-length">0</em>/500</p>
+			</div>
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+			</div>
+		</div>
+	</form>
+	</div>
+@};
+ 
+@var jsPart = {
+	<script type="text/javascript" src="${path}/resource/webuploader/0.1.5/webuploader.min.js"></script> 
+	<script type="text/javascript" src="${path}/resource/My97DatePicker/WdatePicker.js"></script> 
+	<script type="text/javascript" src="${path}/resource/jquery.validation/1.14.0/jquery.validate.min.js"></script> 
+	<script type="text/javascript" src="${path}/resource/jquery.validation/1.14.0/validate-methods.js"></script> 
+	<script type="text/javascript" src="${path}/resource/jquery.validation/1.14.0/messages_zh.min.js"></script> 
+	<script type="text/javascript" src="${path}/resource/jquery.form/jquery.form.js"></script> 
+	<script type="text/javascript" src="${path}/js/jquery.formHelp.js"></script> 
+	<script src="${path}/view/sys/TreeCombo.js"></script>
+	
+	<script>
+	 var r_menus = ${menus};
+	</script>
+	
+	<script type="text/javascript" src="${path}/view/sys/menu.js">
+	</script>
+@};
+ 
+@include("/view/sys/_layout.html",{jsSection:jsPart,htmlSection:htmlPart}){}

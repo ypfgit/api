@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="renderer" content="webkit|ie-comp|ie-stand" charset="utf-8">
+<title>登录</title>
+<link rel="stylesheet" href="${path}/view/sys/login.css" />
+<script src="${path}/js/jquery.js"></script>
+<style>
+
+.title-container {
+	width: 1000px;
+	position: fixed;
+	left: 50%;
+	top: 30%;
+	margin-left: -500px;
+	margin-top: -150px;
+}
+
+
+.login-container {
+	width: 400px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -200px;
+	margin-top: -150px;
+}
+.ui-form-item {
+    padding-left: 110px;
+}
+
+html{
+	padding:0;
+	margin:0;
+	height: 100%;
+	overflow:hidden;
+}
+body {
+	
+	height:100%;
+
+}
+
+.bg{
+    background: url('../../images/sys/gisbg1.png');
+	filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";  
+	-moz-background-size:100% 100%;  
+    background-size:100% 100%;
+}
+
+.title{
+	padding: 2%;
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 宋体;
+    background: url(../../images/sys/login-title.png) no-repeat;
+    background-size: 60px;
+    background-position: 0%;
+    height:60px;
+    wudth:200px;
+}
+
+
+.account-input{ 
+	padding-left:30px !important;
+	background-size:20px 20px !important;
+    -moz-background-size:30px 30px !important; /* 老版本的 Firefox */
+	background:url("../../images/sys/account.png") no-repeat scroll left center transparent; 
+} 
+.password-input{ 
+	padding-left:30px !important;
+	background-size:20px 20px !important;
+    -moz-background-size:20px 20px !important; /* 老版本的 Firefox */
+	background:url("../../images/sys/suo.png") no-repeat scroll left center transparent; 
+} 
+.login-container1 {
+/*     margin-left: -200px; */
+/*     margin-top: -150px; */
+    position: fixed;
+    top: 30%;
+    left:35%;
+    width: 400px;
+}
+.logintextradius{
+/* 	-moz-border-radius: 15px;  */
+/* 	-webkit-border-radius: 15px;  */
+ 	border-radius: 30px; 
+	background-color:black;
+	color:white;
+	position: fixed;
+    top: 30%;
+    left:35%;
+	width:400px;
+	height:300px;
+	filter:alpha(opacity=10);
+	opacity:0.7;
+}
+
+.accountposition{
+  	position: fixed;
+    top: 30%;
+    left:35%;
+    padding-left:60px;
+    width:340px;
+}
+</style>
+</head>
+
+<body class="bg">
+<!-- 	<div class="title-container">  -->
+<!-- 		<div class="title" style="padding-top:0px; text-align:center; ">   -->
+<!-- 		  <h1  class="title">${title}</h1>  -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+		<img style="padding-top:60px;padding-left:60px;"src="../../images/sys/login-title.png"/> 
+<!-- 		<img src="../../images/sys/login-text.png"/>  -->
+		<div class="logintextradius"></div>
+		
+		<div class="accountposition" >
+		    <div style="color:white;font-size:24px;padding-top:30px;">系统登录</div>
+			<input class="ui-input account-input" placeholder="用户名" 
+				style="width:240px;background-color:white;font-size:14px;margin-top:30px;" name="username" type="text" value="${username!}">
+			
+			<input class="ui-input password-input" placeholder="密码" 
+				style="width:240px;background-color:white;font-size:14px;margin-top:20px;" name="password" type="password">
+			<input type="hidden" name="loginToken" value="${loginToken}" />
+			<input type="button" id="J_login" style="width:282px;margin-top:20px;" class="ui-button ui-button-lorange" value="登录">
+		</div>
+		
+		
+		
+<!-- 	<div class="login-container1 logintextradius" style="filter:alpha(opacity=10);opacity:0.65;"> -->
+<!-- 		<div class="ui-box"> -->
+<!-- 			<div class="ui-box-head" > -->
+<!-- 				<h3 class="ui-box-head-title" >用户名登录</h3> -->
+<!-- 			</div> -->
+<!-- 			<div class="ui-box-container" > -->
+<!-- 				<div class="ui-box-content"> -->
+<!-- 					<form class="ui-form ui-form-large" name="" method="post" -->
+<!-- 						action="${path}/account/doLogin" id="" style="margin-top:20px;"> -->
+<!-- 						<fieldset> -->
+<!-- 							<legend>用户登录</legend> -->
+<!-- 								<div style="margin-top:0px;margin-left:80px;"> -->
+<!-- 								 	<input class="ui-input account-input" name="username" type="text" value="${username!}"> -->
+<!-- 								</div> -->
+<!-- 								<div style="margin-top:20px;margin-left:80px;"> -->
+<!-- 								 	<input class="ui-input password-input" name="password" type="password"> -->
+<!-- 								</div> -->
+<!-- 								<div style="margin-top:20px;margin-bottom:20px;margin-left:80px;margin-right:77px;"> -->
+<!-- 								    <input type="hidden" name="loginToken" value="${loginToken}" /> -->
+<!-- 									<input type="button" id="J_login" style="width:100%;" class="ui-button ui-button-lorange" value="确定"> -->
+<!-- 								</div> -->
+<!-- 						</fieldset> -->
+<!-- 					</form> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+	<img style="float:right;right:60px;position:fixed;bottom:60px;" src="../../images/sys/login-tip.png"/> 
+	<script>
+		var r_path = '${path}';
+		function remeberClick(obj) {
+			/* if(obj.checked==false){
+				obj.value="off"
+			}else{
+				obj.value="on"
+			} */
+		}
+		$(function(){
+				$(document).keyup(function(event){
+					  if(event.keyCode ==13){
+					    $("#J_login").trigger("click");
+					  }
+				});
+				 
+				 $('#J_login').on('click', function() {
+					var data = {};
+					data.username = $('input[name=username]').val();
+					data.password = $('input[name=password]').val();
+					//data.captcha = $('input[name=captcha]').val();
+					data.rememberMe = $('input[name=rememberMe]').val();
+					data.loginToken = $('input[name=loginToken]').val();
+					
+					$.post(r_path+'/account/doLogin',data,function(res){
+						if(res.success){
+							window.location.href="/"; 
+						}else{
+							var info = '<div class="ui-form-item"><p class="ui-form-explain ui-tiptext ui-tiptext-error"><i title="出错" class="ui-tiptext-icon iconfont"></i> '+res.msg+'</p></div>';
+								//'<div class="alert alert-yellow alert-small"><span class="close rotate-hover"></span>'+res.msg+'</div>';
+							$('#J_info').empty().append(info);
+							$('input[name=password]').val('');
+							//$('input[name=captcha]').val('');
+							$('#J_img').trigger('click');
+							$('input[name=loginToken]').val(res.loginToken);
+						}
+					})
+				}); 
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+﻿ @var htmlPart = {
+
+<nav class="breadcrumb">
+	<i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>
+	权限管理 <span class="c-gray en">&gt;</span> 元素托管 <a
+		class="btn btn-success radius r"
+		style="line-height: 1.6em; margin-top: 3px"
+		href="javascript:location.replace(location.href);" title="刷新"><i
+		class="Hui-iconfont">&#xe68f;</i></a>
+</nav>
+
+
+<div class="page-container">
+	<div class="row">
+		<div class="col-md-2 ">
+			<td width="200" class="va-t"><ul id="J_tree" class="ztree  bg-1"></ul></td>
+		</div>
+		<div class="col-md-10">
+			<div class="cl pd-5 bg-1 bk-gray">
+				<span class="l">
+<!-- 				<a href="javascript:;" onclick="datadel()" -->
+<!-- 					class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> -->
+<!-- 						批量删除</a> -->
+						 <button id="J_add"
+					class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i>
+						添加</button><button id="J_gen"
+					class="btn btn-primary ml-5 radius"><i class="Hui-iconfont">&#xe615;</i>
+						生成默认</button></span>
+				</span>
+				<span class="r">
+					<input type="text" class="input-text" style="width:150px;"
+					placeholder="输入关键字" id="" name="">
+				<button type="button" title="模糊查询" class="btn btn-success radius" id="" name="">
+					<i class="Hui-iconfont">&#xe665;</i>
+				</button>
+				<button type="button" title="更多搜索" class="btn btn-primary radius" id="" name="">
+					<i class="Hui-iconfont">&#xe6d5;</i>
+				</button>
+				</span>
+			</div>
+			<div class="mt-10">
+				<table
+					class="table table-border table-bordered table-hover table-bg table-sort">
+					<thead>
+						<tr class="text-c">
+							<th width="20"><input type="checkbox" name="cb-check-all" value=""></th>
+							<th width="100">编号</th>
+							<th width="100">名称</th>
+							<th width="100">标识</th>
+							<th width="100">备注</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="page-container" id="J_layer" style="display:none;"> 
+<form  action="" method="post" class="form form-horizontal" id="J_form">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">编号：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="保存后自动生成"  name="id" readonly="readonly">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" name="action">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>标识：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder=""  name="code">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">备注：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<textarea name="remark" cols="" rows="" class="textarea"  placeholder="备注最少输入100个字符" onKeyUp="textarealength(this,100)"></textarea>
+				<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+			</div>
+		</div>
+		<input type="hidden" id="J_menuid" value=""  name="menu_id">
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+			</div>
+		</div>
+	</form>
+	</div>
+@};
+ 
+@var jsPart = {
+	<script type="text/javascript" src="${path}/resource/jquery.validation/1.14.0/jquery.validate.min.js"></script> 
+	<script type="text/javascript" src="${path}/resource/jquery.validation/1.14.0/validate-methods.js"></script> 
+	<script type="text/javascript" src="${path}/resource/jquery.validation/1.14.0/messages_zh.min.js"></script> 
+	<script type="text/javascript" src="${path}/resource/jquery.form/jquery.form.js"></script> 
+	<script type="text/javascript" src="${path}/js/jquery.formHelp.js"></script> 
+	<script>
+	 var r_menus = ${menus};
+	</script>
+	
+	<script type="text/javascript" src="${path}/view/sys/action.js">
+	</script>
+@};
+ 
+@include("/view/sys/_layout.html",{jsSection:jsPart,htmlSection:htmlPart}){}

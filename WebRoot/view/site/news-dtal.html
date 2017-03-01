@@ -1,0 +1,51 @@
+﻿ @var htmlPart = {
+ 
+ 		<!-- 1 幻灯图 2 网站公告 3 服务承诺 4 网站要闻 5 国网动态 -->
+ 		
+ 		<ul class="bread">
+		    <li><a href="${path}/" class="icon-home">首页</a> </li>
+		    @if(type=='1'){
+		    	<li><a href="${path}/more/1">网站推荐</a> </li>
+		    @}
+		    @if(type=='2'){
+		    	<li><a href="${path}/more/2">网站公告</a> </li>
+		    @}
+		    @if(type=='3'){
+		    	<li><a href="${path}/more/3">服务承诺</a> </li>
+		    @}
+		    @if(type=='4'){
+		    	<li><a href="${path}/more/4">网站要闻</a> </li>
+		    @}
+		    @if(type=='5'){
+		    	<li><a href="${path}/more/5">国网动态</a> </li>
+		    @}
+		    <li>正文</li>
+		</ul>
+
+		<div class="line margin-top bg-white">
+			<div class="x12">
+								<div class="detail padding-big-top">
+									<h1>
+                                    ${item.title}
+                                </h1>
+									<p class="text-center margin-top">
+										时间：${item.createdate}</p>
+										
+										<hr class=" margin-big-bottom"/>
+										<p align="center">
+										@if(!isEmpty(item.thumb)){
+										<img style="max-height:200px;" class="img-responsive" src="${path}/${item.thumb}">
+										@}
+									</p>
+									
+									${item.content}
+								</div>
+							</div>
+		</div>
+@};
+ 
+@var jsPart = {
+
+@};
+ 
+@include("/view/site/_layout.html",{jsSection:jsPart,htmlSection:htmlPart}){}

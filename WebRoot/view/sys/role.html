@@ -1,0 +1,99 @@
+﻿ @var htmlPart = {
+
+<nav class="breadcrumb">
+	<i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>
+	权限管理 <span class="c-gray en">&gt;</span> 角色管理 <a
+		class="btn btn-success radius r"
+		style="line-height: 1.6em; margin-top: 3px"
+		href="javascript:location.replace(location.href);" title="刷新"><i
+		class="Hui-iconfont">&#xe68f;</i></a>
+</nav>
+
+
+<div class="page-container">
+	<div class="row">
+	
+	<div class="col-md-12">
+			<div class="cl pd-5 bg-1 bk-gray">
+				<span class="l">
+<!-- 				<button -->
+<!-- 					class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> -->
+<!-- 						批量删除</button>  -->
+						<button id="btn-add" 
+					class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i>
+						添加</button></span>
+				</span>
+				<span class="r">
+					<input id="J_title" type="text" class="input-text" style="width:150px;"
+					placeholder="输入关键字" id="" name="">
+				<button id="J_query" type="button" title="模糊查询" class="btn btn-success radius" id="" name="">
+					<i class="Hui-iconfont">&#xe665;</i>
+				</button>
+<!-- 				<button type="button" title="更多搜索" class="btn btn-primary radius" id="" name=""> -->
+<!-- 					<i class="Hui-iconfont">&#xe6d5;</i> -->
+<!-- 				</button> -->
+				</span>
+			</div>
+			<div class="mt-10">
+				<table
+					class="table table-border table-bordered table-hover table-bg table-sort">
+					<thead>
+						<tr class="text-c">
+							<th width="20"><input type="checkbox" name="cb-check-all" value=""></th>
+							<th width="40">编号</th>
+							<th width="100">角色名称</th>
+							<th width="200">备注</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+		</div>
+</div>
+
+<div class="page-container" id="J_layer" style="display:none;"> 
+<form  action="" method="post" class="form form-horizontal" id="J_form">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">编号：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder=""  name="id" readonly="readonly">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>角色名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" name="name">
+			</div>
+		</div>
+		
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">备注：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<textarea name="remark" cols="" rows="" class="textarea"  placeholder="备注最少输入100个字符" onKeyUp="textarealength(this,100)"></textarea>
+				<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+			</div>
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+			</div>
+		</div>
+	</form>
+	</div>
+@};
+ 
+@var jsPart = {
+	<script type="text/javascript" src="${path}/resource/jquery.validation/1.14.0/jquery.validate.min.js"></script> 
+	<script type="text/javascript" src="${path}/resource/jquery.validation/1.14.0/validate-methods.js"></script> 
+	<script type="text/javascript" src="${path}/resource/jquery.validation/1.14.0/messages_zh.min.js"></script> 
+	<script type="text/javascript" src="${path}/resource/jquery.form/jquery.form.js"></script> 
+	<script type="text/javascript" src="${path}/js/jquery.formHelp.js"></script> 
+	<script type="text/javascript" src="${path}/view/sys/role.js"></script> 
+	<script>
+	</script>
+	
+
+@};
+ 
+@include("/view/sys/_layout.html",{jsSection:jsPart,htmlSection:htmlPart}){}

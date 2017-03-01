@@ -1,0 +1,106 @@
+﻿ @var htmlPart = {
+ 
+ 		<!-- 1 幻灯图 2 网站公告 3 服务承诺 4 网站要闻 5 国网动态 -->
+ 		
+ 		<ul class="bread">
+		    <li><a href="${path}/" class="icon-home">首页</a> </li>
+		    @if(type=='1'){
+		    	<li><a href="${path}/more/1">网站推荐</a> </li>
+		    @}
+		    @if(type=='2'){
+		    	<li><a href="${path}/more/2">网站公告</a> </li>
+		    @}
+		    @if(type=='3'){
+		    	<li><a href="${path}/more/3">服务承诺</a> </li>
+		    @}
+		    @if(type=='4'){
+		    	<li><a href="${path}/more/4">网站要闻</a> </li>
+		    @}
+		    @if(type=='5'){
+		    	<li><a href="${path}/more/5">国网动态</a> </li>
+		    @}
+		    <li>列表</li>
+		</ul>
+
+		<ul class="list-media list-underline" id="J_list">
+		</ul>
+		<div id="J_page" class="text-center"></div>
+@};
+ 
+@var jsPart = {
+	<link rel="stylesheet" href="${path}/resource/laypage/skin/laypage.css">
+	<script type="text/javascript" src="${path}/resource/laypage/laypage.js"></script> 
+
+	<script>
+	 var r_type = '${type}';
+	 
+	 $(document).ready(function() {
+		 
+		 
+		 function page(curr){
+			 var curSize=10;
+			 var $page = $('.pagination');
+			 $.get('${path}/getNews',{pageNumber:curr||1,pageSize:curSize,type:r_type},function(res){
+				 if(res.list){
+					var totalPage = res.totalPage;
+					var firstPage = res.firstPage;
+					var lastPage = res.lastPage;
+					var pageNumber = res.pageNumber;
+					var list = res.list;
+					
+					$('#J_list').empty();
+					for(var i=0;i<list.length;i++){
+						var li = $("<li></li>");
+						var div = $("<div class='media media-x'></div>");
+						li.append(div);
+						
+						var item = list[i];
+						var img = '',summary='';
+						if(item.thumb){
+							img = '	<img height="100" width="100" src="'+r_path+'/'+item.thumb+'" class="radius" alt="">';
+						}else{
+							img = '	<img height="100" width="100" src="'+r_path+'/images/news-thumb.jpg" class="radius" alt="">';
+						}
+						
+						if(item.summary){
+							summary = item.summary+"...";
+						}else{
+							summary = item.summary1+"...";
+						}
+						var html = '<strong>'+item.title+'</strong>'+
+							'<a class="float-left" target="_blank" href="${path}/show/'+item.id+'-'+r_type+'">'+
+							img+
+							'</a>'+
+							'<div class="media-body">'+summary+
+							'</div>';
+						div.append(html);
+						$('#J_list').append(li);
+					}
+					
+					//显示分页
+				    laypage({
+				      cont: 'J_page', //容器。值支持id名、原生dom对象，jquery对象。【如该容器为】：<div id="page1"></div>
+				      pages: totalPage, //通过后台拿到的总页数
+				      skin: 'molv', //皮肤
+				      skip: true, //是否开启跳页
+				      curr: curr || 1, //当前页
+				      jump: function(obj, first){ //触发分页后的回调
+				        if(!first){ //点击跳页触发函数自身，并传递当前页：obj.curr
+				          page(obj.curr);
+				        }
+				      }
+				    });
+					
+				 }else{
+					 //暂无数据
+				 }
+			 });
+		 }
+		 
+		 page();
+		 
+	 });
+	</script>
+@};
+ 
+@include("/view/site/_layout.html",{jsSection:jsPart,htmlSection:htmlPart}){}

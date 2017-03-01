@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+<title>${title}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="${path}/css/pintuer.css">
+<link rel="stylesheet" href="${path}/css/style.css">
+<script src="${path}/js/jquery.js"></script>
+<script src="${path}/js/pintuer.js"></script>
+<script src="${path}/js/respond.js"></script>
+<style type="text/css">
+.text-break {
+    word-wrap: break-word;
+    word-break: normal;
+}
+</style>
+</head>
+
+<body>
+	<div class="container">
+		 <div class="layout bg-back  hidden-l">
+			<div class="container-layout height-big">
+				<span class="float-right">
+					
+					@if(!isEmpty(session.S_USER.id)){
+						<a href="${path}/account/logout">退出</a>
+					@}else{
+						<a href="${path}/account/register">注册</a> 
+						<span class="text-little text-gray">|</span>
+						<a href="${path}/account/login">登录</a>
+					@}
+					
+					 <span class="text-little text-gray">|</span> 
+					
+					<a href="${path}/">首页</a> 
+					
+					</span>欢迎来到${title}
+			</div>
+		</div>
+
+		<div
+			class="container-layout bg-main  bg-inverse">
+			<div class="line">
+				<div class="xl12 xs4 xm4 xb3">
+					<button class="button icon-navicon float-right bg-white"
+						data-target="#header-demo4"></button>
+					<img src="${path}/${logo!}"  height="98" />
+				</div>
+				<div class=" xl12 xs8 xm8 xb9 margin-big-top nav-navicon"
+					id="header-demo4">
+					<div class="xs7 xm7 xb3 xb3-move">
+						<ul class="nav nav-menu nav-inline nav-pills">
+							<li class="active"><a href="${path}/" >首页</a></li>
+							<li><a href="#">更多<span class="arrow"></span></a>
+                                <ul class="drop-menu">
+                                    <li><a href="#">组件</a> </li>
+                                    <li><a href="#">模块<span class="arrow"></span></a>
+                                        <ul>
+                                            <li><a href="#">头部</a> </li>
+                                            <li><a href="#">导航</a> </li>
+                                            <li><a href="#">底部</a> </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+						</ul>
+					</div>
+					<div class="xs4 xm4 xb3 ">
+						<form class="hidden">
+							<div class="input-group padding-little-top">
+								<input type="text" class="input" name="keywords" size="30"
+									placeholder="关键词" /> <span class="addbtn">
+									<button type="button" class="button bg">搜!</button>
+								</span>
+							</div>
+						</form>
+					</div>
+					<div class="hidden-s hidden-m xb3 xb3-move">
+						<div class="xl6 xb12 text-white">
+							<h1>${contact}</h1>
+						</div>
+						<div class="xl6 xb12 text-small text-center">
+							<a href="#" class="win-homepage">设为首页</a> | <a href="#"
+								class="win-favorite">加入收藏</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- banner-->
+		<div class="banner">
+			<div class="carousel">
+				
+				@for(slide in slides1){
+					<div class="item">
+						<a href="${path}/show/${slide.id}-1" target="_blank" style="height:260px;" alt="${slide.title}"><img height="260" src="${path}/${slide.thumb}"/></a>
+					</div>
+				@}
+			</div>
+		</div>
+		
+		
+		<div class="line-middle margin-top">
+			<div class="x9">
+				<div class="panel">
+					<div class="panel-head bg-dn">
+						<span class="text-main"><strong>信息中心</strong></span>
+					</div>
+				</div>
+				<div class="x4">
+					<div class="view-body margin-top">
+						<div class="banner">
+							<div class="carousel">
+							@if(!isEmpty(wzyw)){
+								@for(item in wzyw){
+									@if(!isEmpty(item.thumb)){
+										<div class="item">
+											<a style="height: 293px;" href="${path}/show/${item.id}-4" target="_blank">
+												<img src="${path}/${item.thumb}" />
+											</a>
+										</div>
+									@}
+								@}
+							@}
+							@if(!isEmpty(gwdt)){
+								@for(item in gwdt){
+									@if(!isEmpty(item.thumb)){
+										<div class="item">
+											<a style="height: 293px;" href="${path}/show/${item.id}-5" target="_blank">
+												<img src="${path}/${item.thumb}" />
+											</a>
+										</div>
+									@}
+								@}
+							@}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="x8">
+					<div class="tab border-sub margin-top">
+						<div class="tab-head " id="J_news">
+							<span class="tab-more"><a href="${path}/more/4" target="_blank">更多</a></span>
+							<ul class="tab-nav">
+								<li class="active" data="${path}/more/4"><a href="#J_tabNew1">公安信息</a></li>
+								<li class="" data="${path}/more/5"><a href="#J_tabNew2">政策法规</a></li>
+							</ul>
+						</div>
+						<div class="tab-body ">
+							<div class="tab-panel active" id="J_tabNew1">
+								<div class="view-body">
+									<div class="list-link">
+										@for(item in wzyw){
+											<a href="${path}/show/${item.id}-4" target="_blank" class=""><span class="float-right">
+												${item.createdate} </span>
+												@if(strutil.length(item.title)>35){
+													${strutil.subStringTo(item.title,0,35)}...
+												@}else{
+													${item.title}
+												@}
+												
+												
+												</a> 
+										@}
+										 
+									</div>
+								</div>
+							</div>
+							<div class="tab-panel" id="J_tabNew2">
+								<div class="list-link">
+									@for(item in gwdt){
+											<a href="${path}/show/${item.id}-5" target="_blank" class=""><span class="float-right">
+												${item.createdate} </span>
+												@if(strutil.length(item.title)>35){
+													${strutil.subStringTo(item.title,0,35)}...
+												@}else{
+													${item.title}
+												@}
+												 </a> 
+										@}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="x3">
+				@if(isEmpty(session.S_USER.id)){
+					<div class="panel" id="J_loginBox" style="height:303px;">
+					<div class="panel-head text-center bg-dn">
+						<span class="text-main"><strong>请登录</strong></span>
+					</div>
+					<div class="panel-body" style="padding-top:10px;">
+						<div class="view-body">
+							<form method="post" method="post"
+								action="${path}/account/doLogin">
+								<div class="form-group">
+									<div class="field">
+										<div class="input-group">
+											<span class="addon icon-user"></span> <input type="text"
+												class="input" name="account"  value="${account!}" size="50" placeholder="账号" />
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="field">
+										<div class="input-group">
+											<span class="addon icon-key"></span> <input type="password"
+												class="input" name="password"  size="50" placeholder="请输入密码" />
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="field">
+										<input type="text" class="input" name="captcha"
+											placeholder="填写右侧的验证码" value=""> <img
+											src="${path}/account/img"
+											onClick="var t = Math.random();this.src='${path}/account/img?t='+t;" title="点击刷新图片校验码"
+											width="80" height="32" class="passcode" id="J_img">
+									</div>
+								</div>
+
+								<div class="form-group">
+									记住我：
+									<div class="button-group radio">
+										<label class="button active"> <span
+											class="icon icon-check text-green"></span> <input
+											name="rememberMe" value="yes" checked="checked" type="radio">是
+										</label> <label class="button"> <span
+											class="icon icon-times text-red"></span> <input
+											name="rememberMe" value="no" type="radio">否
+										</label>
+									</div>
+								</div>
+								<input type="hidden" name="loginToken" value="${loginToken}" />
+								
+								<div id="J_info">
+								
+								</div>
+
+								<div class="form-button margin-top text-center">
+									<button class="button" type="button" id="J_login">登录</button>
+									<a class="button" href="${path}/account/register" type="button">注册</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				@}else{
+					<div class="panel" id="J_userBox">
+					<div class="panel-head bg-dn">
+					用户信息
+					</div>
+					<div class="panel-body text-center" style="padding: 10px 5px;">
+						<table class="table borderless"  style="table-layout:fixed;">
+							<tbody>
+							<tr>
+								<td width="20%">
+									<span class="icon-user text-main"></span>
+								</td>
+								<td width="40%">
+									<div class="text-break">${session.S_USER.account!}</div>
+								</td width="40%">
+								<td>
+									${session.S_USER.role_name!}
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="icon-fax text-sub"></span>
+								</td>
+								<td>
+									
+								</td>
+								<td>
+									
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+					<div class="panel-foot bg-back border-back">
+						<a href="${path}/sys" target="_blank" class="button button-block bg-dot text-center" style="margin-top:5px;">管理平台</a>
+						<a href="${path}/account/logout" class="button button-block bg-blue text-center" style="margin-top:5px;">退出登录</a>
+					</div>
+					</div>
+				@}
+				
+				<div class="panel margin-top">
+					<div class="panel-head bg-dn">
+						<span class="text-main"><strong>通知公告</strong> <span class="float-right"><a target="_blank" href="${path}/more/2">更多</a></span></span>
+					</div>
+					<ul class="list-group">
+						@if(!isEmpty(wzgg)){
+							@for(item in wzgg){
+								<li><span class="float-right badge bg-red">${item.createdate}</span><span
+									class="icon-user hidden"></span> <a href="${path}/show/${item.id}-2" class="text-more" target="_blank">
+									
+									@if(strutil.length(item.title)>7){
+										${strutil.subStringTo(item.title,0,7)}...
+									@}else{
+										${item.title}
+									@}
+									</a>
+								</li>
+							@}
+						@}
+						
+					</ul>
+				</div>
+				<div class="panel margin-top" style="height:174px;">
+					<div class="panel-head bg-dn">
+						<span class="text-main"><strong>服务承诺</strong></span>
+					</div>
+					<div class="panel-body">
+						@if(!isEmpty(fwcn)){
+						<a href="${path}/show/${fwcn.id}-3" class="" target="_blank">${fwcn.summary} </a>
+						@}
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+		
+		<div class="container margin-top  bg-back">
+			<div class="" >
+				<div class="text-center">
+					<ul class="nav nav-inline">
+						<li class="active"><a href="${path}/">网站首页</a></li>
+						<li><a href="${path}/more/4" target="_blank">新闻资讯</a></li>
+						<li><a href="${path}/project" target="_blank">项目列表 </a></li>
+						<li><a href="#" target="_blank">技术反馈</a></li>
+						<li><a href="#" target="_blank">留言反馈</a></li>
+						<li><a href="#" target="_blank">联系方式</a></li>
+					</ul>
+				</div>
+				<div class="text-center height-big">${icp}</div>
+			</div>
+		</div>
+	
+	<div class="doc-backtop win-backtop icon-arrow-circle-up"></div>
+</body>
+<script>
+var r_path = '${path}';
+var r_user = {id:'${session.S_USER.id!}',name:'${session.S_USER.name!}',account:'${session.S_USER.account!}',status:'${session.S_USER.status!}',rolename:'${session.S_USER.role_name!}'};
+	 
+	$(document).keyup(function(event){
+	  if(event.keyCode ==13){
+	    $("#J_login").trigger("click");
+	  }
+	});
+	 
+	 $('#J_login').on('click', function() {
+		var data = {};
+		data.account = $('input[name=account]').val();
+		data.password = $('input[name=password]').val();
+		data.captcha = $('input[name=captcha]').val();
+		data.rememberMe = $('input[name=rememberMe]').val();
+		data.loginToken = $('input[name=loginToken]').val();
+		
+		$.post(r_path+'/account/ajaxLogin',data,function(res){
+			if(res.success){
+				window.location.href="/"; 
+			}else{
+				var info = '<div class="alert alert-yellow alert-small"><span class="close rotate-hover"></span>'+res.msg+'</div>';
+				$('#J_info').empty().append(info);
+				$('input[name=password]').val('');
+				$('input[name=captcha]').val('');
+				$('#J_img').trigger('click');
+				$('input[name=loginToken]').val(res.loginToken);
+			}
+		})
+	}); 
+	$(document).ready(function() {
+		$('li','#J_news').click(function(){
+			var href = $(this).attr('data');
+			$('span a','#J_news').attr('href',href);
+		});
+	});
+</script>
+
+</html>

@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>Markdown Temp预览</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://libs.bsdev.cn/highlight.js/9.8.0/styles/github.css">
+	<link rel="stylesheet" href="https://libs.bsdev.cn/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script src = "https://libs.bsdev.cn/highlight.js/9.8.0/highlight.pack.js"></script>
+	<script src = "https://libs.bsdev.cn/jquery/2.0.3/jquery-2.0.3.min.js"></script>
+	<style type = "text/css">
+		body {
+			font-family:"Microsoft YaHei";
+		}
+		h1, .h1, h2, .h2, h3, .h3 {
+		    margin-bottom: 22px;
+		    margin-top: 22px;
+		}
+		img {display:block;}
+		p {
+		    margin: 0 0 10px;
+		    line-height: 24px;
+		    margin-bottom:20px;
+		}
+		li {
+			padding-bottom:5px;
+		}
+		blockquote p {
+			font-size:16px;
+		}
+		.row {
+			/*border:1px solid #ccc;*/
+			margin-top:24px;
+			margin-bottom:40px;
+		}
+		#footer {
+			width:100%;
+			font-size:12px;
+			text-align:center;
+			/*background-color: #575757;*/
+			color:#737373;
+			line-height:32px;
+			position:fixed;
+			bottom:0;
+		}
+		#footer a {
+			text-decoration:none;
+			color:#919191;
+		}
+		li pre {
+		    margin-top: 8px;
+		}  
+	</style>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b7e2b48d5709f098bb5c46f0b879f7a7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-md-offset-1">
+				<div class = "htmlcontent"><p><a href="https://markdown.win">https://markdown.win</a></p>
+<h1>/api/token/access_token  </h1>
+<h4>获取token:</h4>
+<blockquote>
+<p>account:admin
+password:1
+grant_type:app_credential
+appid:22</p>
+</blockquote>
+<pre><code>{
+  "data": {
+    "data": null,
+    "aesKey": "8gOO2ZBLVj0f7n0869G207u4AXhF11Eq0t59G22c04C",
+    "accessToken": "YcRSJLggkqD4uNMJ",
+    "token": "J1x3k72k7x"
+  },
+  "success": true
+}</code></pre>
+<h1>/api/account/user</h1>
+<h4>获取用户信息:</h4>
+<blockquote>
+<p>account:admin
+accessToken:YcQgefIlzvz866BI</p>
+</blockquote>
+<pre><code>{
+  "data": {
+    "account": "admin",
+    "com_dept_id": "001",
+    "com_dept_name": "平台机构",
+    "com_id": 1,
+    "company": "北京通晟",
+    "dept_id": "001",
+    "dept_name": "平台机构",
+    "enabled": "1",
+    "id": 1,
+    "name": "管理员",
+    "password": "1",
+    "phone": "15237123869",
+    "remark": "3",
+    "role_id": "1",
+    "role_name": "管理员",
+    "sort_no": 2
+  },
+  "success": true
+}</code></pre>
+<h1>/api/plan/mryt</h1>
+<h4>获取每日一题列表:</h4>
+<blockquote>
+<p>accessToken:YcQhJZEmjP-Im90A
+limit:2 不传则默认为1</p>
+</blockquote>
+<pre><code>{
+  "data": [
+    {
+      "isfavor": 0,
+      "degree": 1,
+      "pqid": 662,
+      "type": "0",
+      "analysis": null,
+      "paper_id": 14,
+      "score": 0,
+      "answer": "A",
+      "name": "采用止血带止血，止血带持续时间一般不超过（     ），太长可导致肌体坏死。",
+      "is_comment": "1",
+      "options": [
+        {
+          "sort_no": "A",
+          "name": "1 h",
+          "id": "3916"
+        },
+        {
+          "sort_no": "B",
+          "name": "2 h",
+          "id": "3917"
+        },
+        {
+          "sort_no": "C",
+          "name": "3 h",
+          "id": "3914"
+        },
+        {
+          "sort_no": "D",
+          "name": "1 h",
+          "id": "3915"
+        },
+        {
+          "sort_no": "E",
+          "name": "2 h",
+          "id": "3912"
+        },
+        {
+          "sort_no": "F",
+          "name": "3 h",
+          "id": "3913"
+        },
+        {
+          "sort_no": "G",
+          "name": "3 h",
+          "id": "3911"
+        }
+      ],
+      "id": 1238,
+      "plan_id": 4,
+      "knowledge": null
+    },
+    {
+      "isfavor": 0,
+      "degree": 1,
+      "pqid": 658,
+      "type": "0",
+      "analysis": null,
+      "paper_id": 14,
+      "score": 0,
+      "answer": "A",
+      "name": "对触电后停止呼吸的人，应立即采用（     ）法进行抢救。",
+      "is_comment": "1",
+      "options": [
+        {
+          "sort_no": "A",
+          "name": "人工呼吸",
+          "id": "3832"
+        },
+        {
+          "sort_no": "B",
+          "name": "清洗",
+          "id": "3833"
+        },
+        {
+          "sort_no": "C",
+          "name": "心脏按压",
+          "id": "3830"
+        },
+        {
+          "sort_no": "D",
+          "name": "人工呼吸",
+          "id": "3831"
+        },
+        {
+          "sort_no": "E",
+          "name": "清洗",
+          "id": "3828"
+        },
+        {
+          "sort_no": "F",
+          "name": "心脏按压",
+          "id": "3829"
+        },
+        {
+          "sort_no": "G",
+          "name": "心脏按压",
+          "id": "3827"
+        }
+      ],
+      "id": 1226,
+      "plan_id": 4,
+      "knowledge": null
+    }
+  ],
+  "success": true
+}</code></pre>
+<h1>/api/plan/mryt_save</h1>
+<h4>保存每日一练答案:</h4>
+<blockquote>
+<p>accessToken
+planid//安排id
+paperid//试卷id
+questionid//题目id
+optionid//选项id
+answer //用户答案
+rightanswer//正确答案
+type//题目类型
+score//题目分数</p>
+</blockquote>
+<h1>/api/plan/mryt_info</h1>
+<h3>获取每日一练当日答题信息:</h3>
+<pre><code>{
+  "data": {
+    "wrongnum": 0,
+    "rightnum": 0,
+    "daynum": 11
+  },
+  "success": true
+}</code></pre>
+<h1>/api/common/favor</h1>
+<h4>收藏题目：</h4>
+<blockquote>
+<p>questionid,<em>pqid,</em>planid flag(0取消1收藏)</p>
+</blockquote>
+<pre><code>{
+
+  "success": true
+}</code></pre>
+<ul>
+<li>同一个题目只能收藏一次</li>
+</ul>
+<h1>/api/common/error_info</h1>
+<h4>错题按模块统计：</h4>
+<pre><code>{
+  "data": [
+    {
+      "module_name": "每日一练",
+      "module_type": "4",
+      "question_num": 5
+    }
+  ],
+  "success": true
+}</code></pre>
+<h1>/api/common/error_page</h1>
+<h4>获取错题列表：</h4>
+<blockquote>
+<p><em>pageSize:10
+</em>pageNumber:1
+moduletype:1(为空则获取所有模块)</p>
+</blockquote>
+<pre><code>{
+  "totalRow": 5,
+  "pageNumber": 1,
+  "data": [
+    {
+      "isfavor": 0,
+      "degree": 1,
+      "pqid": 662,
+      "type": "0",
+      "analysis": null,
+      "question_id": 1238,
+      "score": null,
+      "answer": "D",
+      "name": "采用止血带止血，止血带持续时间一般不超过（     ），太长可导致肌体坏死。",
+      "is_comment": "1",
+      "options": [
+        {
+          "sort_no": "A",
+          "name": "1 h",
+          "id": "3916"
+        },
+        {
+          "sort_no": "B",
+          "name": "2 h",
+          "id": "3917"
+        },
+        {
+          "sort_no": "C",
+          "name": "3 h",
+          "id": "3914"
+        },
+        {
+          "sort_no": "D",
+          "name": "1 h",
+          "id": "3915"
+        },
+        {
+          "sort_no": "E",
+          "name": "2 h",
+          "id": "3912"
+        },
+        {
+          "sort_no": "F",
+          "name": "3 h",
+          "id": "3913"
+        },
+        {
+          "sort_no": "G",
+          "name": "3 h",
+          "id": "3911"
+        }
+      ],
+      "id": 5,
+      "plan_id": 4,
+      "knowledge": null
+    }
+  ],
+  "success": true,
+  "totalPage": 5,
+  "pageSize": 1
+}</code></pre>
+<h1>/api/common/favor_info</h1>
+<h4>收藏按模块统计：</h4>
+<pre><code>{
+  "data": [
+    {
+      "module_name": "每日一练",
+      "module_type": "4",
+      "question_num": 5
+    }
+  ],
+  "success": true
+}</code></pre>
+<h1>/api/common/favor_page</h1>
+<h4>获取收藏列表：</h4>
+<blockquote>
+<p><em>pageSize:10
+</em>pageNumber:1
+moduletype:1(为空则获取所有模块)</p>
+</blockquote>
+<pre><code>{
+  "totalRow": 1,
+  "pageNumber": 1,
+  "data": [
+    {
+      "isfavor": "1",
+      "degree": 1,
+      "pqid": 662,
+      "type": "0",
+      "analysis": null,
+      "question_id": 1238,
+      "score": null,
+      "answer": "D",
+      "name": "采用止血带止血，止血带持续时间一般不超过（     ），太长可导致肌体坏死。",
+      "is_comment": "1",
+      "options": [
+        {
+          "sort_no": "A",
+          "name": "1 h",
+          "id": "3916"
+        },
+        {
+          "sort_no": "B",
+          "name": "2 h",
+          "id": "3917"
+        },
+        {
+          "sort_no": "C",
+          "name": "3 h",
+          "id": "3914"
+        },
+        {
+          "sort_no": "D",
+          "name": "1 h",
+          "id": "3915"
+        },
+        {
+          "sort_no": "E",
+          "name": "2 h",
+          "id": "3912"
+        },
+        {
+          "sort_no": "F",
+          "name": "3 h",
+          "id": "3913"
+        },
+        {
+          "sort_no": "G",
+          "name": "3 h",
+          "id": "3911"
+        }
+      ],
+      "id": 7,
+      "plan_id": 4,
+      "knowledge": null
+    }
+  ],
+  "success": true,
+  "totalPage": 1,
+  "pageSize": 1
+}</code></pre>
+<h1>/api/plan/sjlx_plan</h1>
+<h4>获取随机练习安排</h4>
+<blockquote>
+<p>accessToken:YcRMffBamqGu44Ib
+pageNumber:1
+pageSize:10</p>
+</blockquote>
+<pre><code>{
+  "totalRow": 1,
+  "pageNumber": 1,
+  "data": [
+    {
+      "create_date": "2017-02-17 15:54:39",//创建时间
+      "begin_date": "2017-02-17 15:53:38",//练习时间起
+      "end_date": "2017-02-28 15:53:38",//练习时间止
+      "id": 5,//安排id
+      "name": "练习cet6",
+      "num": 102,//总题数
+      "paper_id": 14,
+      "plan_num": 0,//练习人数
+      "show_answer": "0",
+      "show_type": "1"
+    }
+  ],
+  "success": true,
+  "totalPage": 1,
+  "pageSize": 10
+}</code></pre>
+<h1>/api/plan/sjlx_info</h1>
+<h4>获取某练习安排的答题信息</h4>
+<blockquote>
+<p>accessToken:YcRMffBamqGu44Ib
+planid:5</p>
+</blockquote>
+<pre><code>{
+  "data": {
+    "upid": null,//用户答题表ID,如果为null,则还未开始做题,点开始做题前必须调用 sjlx_begin获取upid
+    "plan_id": 5,
+    "paper_id": 14,
+    "giveup_num": 0,//放弃题数
+    "name": "练习cet6",
+    "num": 102,//题目总数
+    "right_num": 0,//答对题数
+    "wrong_num": 0,//答错题数
+    "is_finish": 0,//题目是否做完
+    "begin_date": null//练习开始时间
+  },
+  "success": true
+}</code></pre>
+<h1>/api/plan/sjlx_begin</h1>
+<h4>开始练习时获取upid</h4>
+<blockquote>
+<p>accessToken:YcRMffBamqGu44Ib
+planid:5
+paperid:14</p>
+</blockquote>
+<pre><code>{
+  "upid": 14,
+  "success": true
+}</code></pre>
+<h1>/api/plan/sjlx_question</h1>
+<h4>分页获取随机练习的题目</h4>
+<blockquote>
+<p>accessToken:YcRWfPZ5zPaa44wg
+pageSize:1
+pageNumber:1
+planid:5
+upid:14</p>
+</blockquote>
+<pre><code>{
+  "totalRow": 20,
+  "pageNumber": 1,
+  "data": [
+    {
+      "isfavor": 0,
+      "degree": 1,
+      "pqid": 655,
+      "type": "0",
+      "analysis": null,
+      "paper_id": 14,
+      "score": 0,
+      "answer": "C",
+      "name": "采煤工作面发火时，本班班长应把大家组织起来，利用现场的一切灭火设施和材料进行灭火，并迅速利用电话向（     ）报告。",
+      "is_comment": "1",
+      "options": [
+        {
+          "sort_no": "A",
+          "name": "调度",
+          "id": "4007"
+        },
+        {
+          "sort_no": "B",
+          "name": "矿长",
+          "id": "4008"
+        },
+        {
+          "sort_no": "C",
+          "name": "行政办公室",
+          "id": "4005"
+        },
+        {
+          "sort_no": "D",
+          "name": "调度",
+          "id": "4006"
+        },
+        {
+          "sort_no": "E",
+          "name": "矿长",
+          "id": "4003"
+        },
+        {
+          "sort_no": "F",
+          "name": "行政办公室",
+          "id": "4004"
+        },
+        {
+          "sort_no": "G",
+          "name": "行政办公室",
+          "id": "4002"
+        }
+      ],
+      "my_answer": null,
+      "id": 1251,
+      "plan_id": 5,
+      "knowledge": null
+    }
+  ],
+  "success": true,
+  "totalPage": 20,
+  "pageSize": 1
+}</code></pre>
+<h1>/api/plan/sjlx_save</h1>
+<h4>保存随机练习答案:</h4>
+<blockquote>
+<p>accessToken
+upid//
+questionid//题目id
+optionid//选项id
+answer //用户答案
+rightanswer//正确答案
+type//题目类型
+score//题目分数</p>
+</blockquote>
+<h1>/api/plan/exam_plan</h1>
+<h4>查询考试安排</h4>
+<blockquote>
+<p>accessToken:YcQtIfBfi-Gnkaw7
+pageSize:1
+pageNumber:1
+flag:0 (0模拟1真实)</p>
+</blockquote>
+<pre><code>{
+  "totalRow": 1,
+  "pageNumber": 1,
+  "data": [
+    {
+      "begin_date": "2017-02-23 16:33:55",//安排开始时间
+      "end_date": "2017-02-28 16:33:55",
+      "id": 7,//安排id
+      "is_join": 0,//是否参于了
+      "is_submit": 0,//是否提交了
+      "join_num": 100,//应该参考人数
+      "name": "模考1",
+      "paper_id": 14,
+      "plan_num": 0,//实际参考人数
+      "upid": null
+    }
+  ],
+  "success": true,
+  "totalPage": 1,
+  "pageSize": 1
+}</code></pre>
+<h1>/api/plan/exam_info</h1>
+<h4>查询考卷信息</h4>
+<blockquote>
+<p>accessToken:YcQtIfBfi-Gnkaw7
+planid:1
+flag:0 (0模拟卷1真实卷)</p>
+</blockquote>
+<pre><code>{
+  "data": {
+    "plan_id": 7,//安排id
+    "paper_id": 14,//试卷id
+    "name": "模考1",//安排名称
+    "remark": "11",//安排备注
+    "num": 17,//试卷总题数
+    "total_score": 100,//试卷总分
+    "pass_score": 60,//试卷及格分
+    "mins": 60,//考试时长（分）
+    "begin_date": "2017-02-23 16:33:55",//安排时段开始
+    "end_date": "2017-02-28 16:33:55",//安排时段结束
+    "join_num": 100,//安排应参考人数
+    "plan_num": 0,//安排已参考人数
+    "upid": null,//答卷id
+    "exam_date": null,//答卷开始时间
+    "submit_date": null,//答卷提交时间
+    "is_submit": null,//是否交卷（0未交1自己提交2系统强制提交)
+    "parts": [
+      {
+        "id": 38,
+        "name": "单选题",
+        "question_num": 5,
+        "question_score": 1,
+        "question_type": 0,
+        "subname": "xx"
+      },
+      {
+        "id": 39,
+        "name": "多选题",
+        "question_num": 5,
+        "question_score": 3,
+        "question_type": 1,
+        "subname": "xx"
+      },
+      {
+        "id": 40,
+        "name": "判断",
+        "question_num": 5,
+        "question_score": 1,
+        "question_type": 2,
+        "subname": "xxx"
+      },
+      {
+        "id": 42,
+        "name": "填空",
+        "question_num": 1,
+        "question_score": 1,
+        "question_type": 3,
+        "subname": "11"
+      },
+      {
+        "id": 43,
+        "name": "问答",
+        "question_num": 1,
+        "question_score": 5,
+        "question_type": 4,
+        "subname": "sss"
+      },
+      {
+        "id": 44,
+        "name": "本次考试结束。",
+        "question_num": null,
+        "question_score": null,
+        "question_type": "5",
+        "subname": null
+      }
+    ]
+  },
+  "success": true
+}</code></pre>
+<ul>
+<li>注：question_type:0单选1多选2判断3填空4问答5文本描述</li>
+</ul>
+<h1>/api/plan/exam_begin</h1>
+<h4>开始考试时获取upid</h4>
+<blockquote>
+<p>accessToken:YcRMffBamqGu44Ib
+planid:5
+paperid:14
+flag:0 (0模拟卷1真实卷)</p>
+</blockquote>
+<pre><code>{
+  "upid": 14,
+  "success": true
+}</code></pre>
+<h1>/api/plan/exam_question</h1>
+<h4>分页获取随机练习的题目</h4>
+<blockquote>
+<p>accessToken:YcRWfPZ5zPaa44wg
+pageSize:1
+pageNumber:1
+planid:5
+upid:14
+flag:0/1(模拟/真实)</p>
+</blockquote>
+<pre><code>{
+  "totalRow": 17,
+  "pageNumber": 1,
+  "data": [
+    {
+      "isfavor": 1,
+      "degree": 1,
+      "pqid": 686,
+      "type": "0",
+      "analysis": null,
+      "paper_id": 14,
+      "score": 1,
+      "answer": "C",
+      "name": "采煤工作面发火时，本班班长应把大家组织起来，利用现场的一切灭火设施和材料进行灭火，并迅速利用电话向（     ）报告。",
+      "is_comment": "1",
+      "options": [
+        {
+          "sort_no": "A",
+          "name": "调度",
+          "id": "4007"
+        },
+        {
+          "sort_no": "B",
+          "name": "矿长",
+          "id": "4008"
+        },
+        {
+          "sort_no": "C",
+          "name": "行政办公室",
+          "id": "4005"
+        },
+        {
+          "sort_no": "D",
+          "name": "调度",
+          "id": "4006"
+        },
+        {
+          "sort_no": "E",
+          "name": "矿长",
+          "id": "4003"
+        },
+        {
+          "sort_no": "F",
+          "name": "行政办公室",
+          "id": "4004"
+        },
+        {
+          "sort_no": "G",
+          "name": "行政办公室",
+          "id": "4002"
+        }
+      ],
+      "my_answer": null,
+      "id": 1251,
+      "part_id": 38,
+      "plan_id": 7,
+      "knowledge": null
+    }
+  ],
+  "success": true,
+  "totalPage": 17,
+  "pageSize": 1
+}</code></pre></div>
+			</div>
+		</div>
+	</div>
+	<!--网站底部-->
+	<div id = "footer">©2016 Powered by <a href = "http://markdown.win/" target = "_blank">Markdown-Temp</a> | <a href = "https://github.com/helloxz/Markdown-Temp" rel = "nofollow" target = "_blank">源码下载 | <a href = "http://markdown.win/readme.htm" target = "_blank">使用说明</a> | <a href = "https://www.xiaoz.me" target = "_blank">小z博客</a></div>
+	<!--图片自适应-->
+	<script>
+		$(document).ready(function(){
+			$(".container img").addClass("img-responsive");
+			//通过获取第一个H1标签来生成标题
+			var mytitle = $(".htmlcontent h1").eq(0).text();
+			//改变文档标题
+			$("title").text(mytitle + " - Markdown Temp预览");
+		});
+	</script>
+</body>
+</html>
